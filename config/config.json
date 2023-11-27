@@ -1,0 +1,37 @@
+{
+  "site": {
+    "title": "Emdad Digital Platform",
+    "base_url": "/",
+    "favicon": "/images/favicon.ico",
+    "logo": "/images/logo.png",
+    "logo_width": "200",
+    "logo_height": "48",
+    "logo_text": "Bigspring Light",
+    "logo_footer": "/images/logo-footer.png"
+  },
+
+  "settings": {
+    "pagination": 4,
+    "summary_length": 200,
+    "blog_folder": "blogs"
+  },
+
+  "nav_button": {
+    "enable": false,
+    "label": "Get Started",
+    "link": "/contact"
+  },
+
+  "params": {
+    "contact_form_action": "",
+    "tag_manager_id": "",
+    "footer_content": "Kingdom of Saudi Arabia, Riyadh, An Nada",
+    "copyright": "Coyrights Reserved 2023 Emdad Digital Platform"
+  },
+
+  "metadata": {
+    "meta_author": "Emdad Digital Platform",
+    "meta_image": "",
+    "meta_description": "Landing Page"
+  }
+}

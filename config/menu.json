@@ -1,0 +1,74 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "About",
+      "url": "/pricing"
+    },
+    {
+      "name": "Blog",
+      "url": "/"
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
+      "name": "FAQ",
+      "url": "/faq"
+    }
+  ],
+  "footer": [
+    {
+      "name": "Who we are",
+      "menu": [
+        {
+          "text": "About",
+          "url": "/about"
+        },
+        {
+          "text": "Team",
+          "url": "#"
+        },
+        {
+          "text": "Privacy Policy",
+          "url": "#"
+        },
+        {
+          "text": "Terms & Conditions",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "name": "Explore",
+      "menu": [
+        {
+          "text": "Services",
+          "url": "#"
+        },
+        {
+          "text": "Blog",
+          "url": "#"
+        },
+        {
+          "text": "FAQ",
+          "url": "/faq"
+        }
+      ]
+    },
+    {
+      "name": "Reach Us",
+      "menu": [
+        {
+          "text": "Contact Us",
+          "url": "/contact"
+        }
+      ]
+    }
+  ]
+}
+
