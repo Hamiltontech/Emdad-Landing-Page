@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Cta from "./components/Cta";
-import { markdownify } from "@lib/utils/textConverter";
 
 function Pricing({ data }) {
   const {
-    frontmatter: { title, plans, call_to_action, feature },
+    frontmatter: { title, plans, call_to_action },
   } = data;
   return (
     <>

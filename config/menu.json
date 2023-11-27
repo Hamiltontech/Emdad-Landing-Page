@@ -27,7 +27,7 @@
       "menu": [
         {
           "text": "About",
-          "url": "/about"
+          "url": "/"
         },
         {
           "text": "Team",
