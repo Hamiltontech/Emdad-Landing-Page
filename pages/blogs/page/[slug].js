@@ -7,12 +7,25 @@ import { markdownify } from "@lib/utils/textConverter";
 import Posts from "@partials/Posts";
 const { blog_folder } = config.settings;
 
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 // blog pagination
 const BlogPagination = ({ postIndex, posts, currentPage, pagination }) => {
+
+  const [ blogs, setBlogs] = useState([])
+  useEffect(()=>{
+    axios.get("https://strapi-155887-0.cloudclusters.net/api/blogs?populate=*").then((res)=>{
+      setBlogs(res.data.data)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }, [])
+
   const indexOfLastPost = currentPage * pagination;
   const indexOfFirstPost = indexOfLastPost - pagination;
   const totalPages = Math.ceil(posts.length / pagination);
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = blogs?.slice(indexOfFirstPost, indexOfLastPost);
   const { frontmatter, content } = postIndex;
   const { title } = frontmatter;
 

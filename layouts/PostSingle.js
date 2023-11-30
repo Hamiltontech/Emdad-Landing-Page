@@ -10,7 +10,7 @@ const PostSingle = ({ frontmatter, content, mdxContent }) => {
 
   return (
     <Base title={title} description={description}>
-      <section className="section bg-primary text-white ">
+      <section className="section bg-primary text-white  ">
         <div className="container pt-12">
           <div className="row">
             <article className="col-12 mx-auto text-center md:col-8">
