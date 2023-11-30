@@ -10,8 +10,8 @@ const PostSingle = ({ frontmatter, content, mdxContent }) => {
 
   return (
     <Base title={title} description={description}>
-      <section className="section">
-        <div className="container">
+      <section className="section bg-primary text-white ">
+        <div className="container pt-12">
           <div className="row">
             <article className="col-12 mx-auto text-center md:col-8">
               {image && (
@@ -25,12 +25,12 @@ const PostSingle = ({ frontmatter, content, mdxContent }) => {
                   className="rounded-lg"
                 />
               )}
-              {markdownify(title, "h1", "h2 mb-6 mt-6 text-left")}
+              {markdownify(title, "h1", "h2 mb-6 mt-6 text-left ")}
 
-              <div className="content mb-16 text-left">
+              <div className="content mb-16 text-left text-white">
                 <MDXRemote {...mdxContent} components={shortcodes} />
               </div>
-            </article>
+            </article> 
           </div>
         </div>
       </section>

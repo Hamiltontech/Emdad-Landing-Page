@@ -10,7 +10,7 @@
     },
     {
       "name": "Blog",
-      "url": "/"
+      "url": "/blogs"
     },
     {
       "name": "Contact",
@@ -27,11 +27,11 @@
       "menu": [
         {
           "text": "About",
-          "url": "/"
+          "url": "/pricing"
         },
         {
           "text": "Team",
-          "url": "#"
+          "url": "/pricing"
         },
         {
           "text": "Privacy Policy",
@@ -52,7 +52,7 @@
         },
         {
           "text": "Blog",
-          "url": "#"
+          "url": "/blogs"
         },
         {
           "text": "FAQ",

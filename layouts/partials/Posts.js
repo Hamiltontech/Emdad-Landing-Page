@@ -6,7 +6,7 @@ import Link from "next/link";
 const Posts = ({ posts }) => {
   const { blog_folder, summary_length } = config.settings;
   return (
-    <div className="section row pb-0">
+    <div className="section row pb-0 bg-primary">
       <div className="col-12 pb-12 lg:pb-24">
         <div className="row items-center">
           <div className="col-12 md:col-6">
@@ -30,7 +30,7 @@ const Posts = ({ posts }) => {
                 {posts[0].frontmatter.title}
               </Link>
             </h2>
-            <p className="text-text">
+            <p className="text-white">
               {plainify(
                 posts[0].content?.slice(0, Number(summary_length)),
                 "div"
@@ -60,19 +60,19 @@ const Posts = ({ posts }) => {
           <h2 className="h3 mb-2 mt-4">
             <Link
               href={`/${blog_folder}/${post.slug}`}
-              className="block hover:text-primary"
+              className="block text-white hover:text-secondary ease-in-out duration-200 text-xl font-bold"
             >
               {post.frontmatter.title}
             </Link>
           </h2>
-          <p className="text-text">{post.frontmatter.desc}</p>
-          <Link
+          <p className="text-white">{post.frontmatter.description}</p>
+          {/* <Link
             className="btn btn-primary mt-4"
             href={`/${blog_folder}/${post.slug}`}
             rel=""
           >
             Read More
-          </Link>
+          </Link> */}
         </div>
       ))}
     </div>

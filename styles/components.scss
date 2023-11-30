@@ -61,7 +61,7 @@
   span {
     @apply mx-[5px] inline-block h-[10px] w-[10px] cursor-pointer rounded-full border  border-primary;
     &.swiper-pagination-bullet-active {
-      @apply bg-primary;
+      @apply bg-secondary;
     }
   }
 }
@@ -111,4 +111,9 @@
   a {
     @apply font-semibold text-secondary;
   }
+}
+
+
+.content h2{
+  color: white
 }

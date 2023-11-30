@@ -26,7 +26,7 @@ const Pagination = ({ section, currentPage, totalPages }) => {
                   ? `${section ? "/" + section : "/"}`
                   : `${section ? "/" + section : ""}/page/${currentPage - 1}`
               }
-              className="inline-flex w-[42px] justify-center rounded-md bg-theme-light px-2 py-2 text-dark hover:bg-primary hover:text-white"
+              className="inline-flex w-[42px] justify-center rounded-md bg-theme-light px-2 py-2 text-dark hover:bg-secondary hover:text-white"
             >
               <span className="sr-only">Previous</span>
               <svg
@@ -68,7 +68,7 @@ const Pagination = ({ section, currentPage, totalPages }) => {
               {pagination === currentPage ? (
                 <span
                   aria-current="page"
-                  className={`rounded-md bg-primary px-4 py-2 text-white`}
+                  className={`rounded-md bg-secondary px-4 py-2 text-white`}
                 >
                   {pagination}
                 </span>
@@ -84,7 +84,7 @@ const Pagination = ({ section, currentPage, totalPages }) => {
                 >
                   <a
                     aria-current="page"
-                    className={`rounded-md  bg-theme-light px-4 py-2 text-dark hover:bg-primary hover:text-white`}
+                    className={`rounded-md  bg-theme-light px-4 py-2 text-dark hover:bg-secodary hover:text-white`}
                   >
                     {pagination}
                   </a>
@@ -97,7 +97,7 @@ const Pagination = ({ section, currentPage, totalPages }) => {
           {hasNextPage ? (
             <Link
               href={`${section ? "/" + section : ""}/page/${currentPage + 1}`}
-              className="inline-flex w-[42px] justify-center rounded-md bg-theme-light px-2 py-2 text-dark hover:bg-primary hover:text-white"
+              className="inline-flex w-[42px] justify-center rounded-md bg-theme-light px-2 py-2 text-dark hover:bg-secondary hover:text-white"
             >
               <span className="sr-only">Next</span>
               <svg
