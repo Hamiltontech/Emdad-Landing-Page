@@ -32,9 +32,9 @@ const Contact = ({ data }) => {
 
 
   return (
-    <section className="section ">
-      <div className="container pt-12">
-        {markdownify(title, "h1", "text-center font-normal")}
+    <section className="section bg-primary ">
+      <div className="container pt-12 ">
+        {markdownify(title, "h1", "text-center font-normal text-white")}
         <div className="section row pb-0">
           <div className="col-12 md:col-6 lg:col-7">
             <form
@@ -84,18 +84,18 @@ const Contact = ({ data }) => {
                   onChange={(e) => setMessage(e.target.value)}
                 />
               </div>
-              <button type="submit" className="btn btn-primary">
+              <button type="submit" className="btn btn-primary bg-[#ef7756]">
                 Send Now
               </button>
             </form>
           </div>
           <div className="content col-12 md:col-6 lg:col-5">
-            {markdownify(info.title, "h4")}
-            {markdownify(info.description, "p", "mt-4")}
+            {markdownify(info.title, "h4", "text-white")}
+            {markdownify(info.description, "p", "mt-4 text-white")}
             <ul className="contact-list mt-5">
               {info.contacts.map((contact, index) => (
                 <li key={index}>
-                  {markdownify(contact, "strong", "text-dark")}
+                  {markdownify(contact, "strong", " text-white")}
                 </li>
               ))}
             </ul>
