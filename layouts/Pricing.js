@@ -8,13 +8,26 @@ import { GiBrain } from "react-icons/gi";
 import { RiUserStarFill } from "react-icons/ri";
 import { FaPeopleLine } from "react-icons/fa6";
 
-
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 
 function Pricing({ data }) {
   const {
     frontmatter: { title, plans, call_to_action },
   } = data;
+
+  const [team, setTeam] = useState([])
+  useEffect(()=>{
+    axios.get("https://strapi-155887-0.cloudclusters.net/api/teams?populate=*").then((res)=>{
+      setTeam(res.data.data)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }, [])
+
+
+  console.log(team)
   return (
     <>
       {/* banner */}
@@ -183,77 +196,29 @@ function Pricing({ data }) {
             <h2 class="mb-32 text-3xl font-bold">Meet Our Team</h2>
 
             <div class="grid gap-x-6 md:grid-cols-4 lg:gap-x-12">
+
+              {team?.map((item)=>(
+                <>
               <div class="mb-24 md:mb-0">
                 <div class="block h-full rounded-lg bg-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
                   <div class="flex justify-center">
                     <div class="-mt-[75px] flex justify-center">
                       <img
-                        src="https://i.imgur.com/a9UO0Lk.png"
+                        src={"https://strapi-155887-0.cloudclusters.net" + item?.attributes?.Avatar?.data?.attributes?.url}
                         class="mx-auto w-[150px] rounded-full shadow-lg dark:shadow-black/20"
                         alt="Avatar"
                       />
                     </div>
                   </div>
                   <div class="p-6">
-                    <h5 class="mb-4 text-lg font-bold">Marta Smith</h5>
-                    <p class="mb-6">Frontend Developer</p>
+                    <h5 class="mb-4 text-lg font-bold">{item?.attributes?.Name}</h5>
+                    <p class="mb-6 text-white"> {item?.attributes?.Position}</p>
                   </div>
                 </div>
               </div>
+                </>
+              ))}
 
-              <div class="mb-24 md:mb-0">
-                <div class="block h-full rounded-lg bg-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
-                  <div class="flex justify-center">
-                    <div class="-mt-[75px] flex justify-center">
-                      <img
-                        src="https://i.imgur.com/a9UO0Lk.png"
-                        class="mx-auto w-[150px] rounded-full shadow-lg dark:shadow-black/20"
-                        alt="Avatar"
-                      />
-                    </div>
-                  </div>
-                  <div class="p-6">
-                    <h5 class="mb-4 text-lg font-bold">Marta Smith</h5>
-                    <p class="mb-6">Frontend Developer</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="mb-24 md:mb-0">
-                <div class="block h-full rounded-lg bg-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
-                  <div class="flex justify-center">
-                    <div class="-mt-[75px] flex justify-center">
-                      <img
-                        src="https://i.imgur.com/cti2obV.png"
-                        class="mx-auto w-[150px] rounded-full shadow-lg dark:shadow-black/20"
-                        alt="Avatar"
-                      />
-                    </div>
-                  </div>
-                  <div class="p-6">
-                    <h5 class="mb-4 text-lg font-bold">Darren Randolph</h5>
-                    <p class="mb-6">Marketing expert</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="">
-                <div class="block h-full rounded-lg bg-white/10 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] ">
-                  <div class="flex justify-center">
-                    <div class="-mt-[75px] flex justify-center">
-                      <img
-                        src="https://i.imgur.com/cti2obV.png"
-                        class="mx-auto w-[150px] rounded-full shadow-lg dark:shadow-black/20"
-                        alt="Avatar"
-                      />
-                    </div>
-                  </div>
-                  <div class="p-6">
-                    <h5 class="mb-4 text-lg font-bold">Ayat Black</h5>
-                    <p class="mb-6">Web designer</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
         </div>
