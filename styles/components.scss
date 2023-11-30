@@ -51,7 +51,7 @@
 
 //feature card
 .feature-card {
-  @apply transition-all duration-200 ease-in-out hover:shadow;
+  @apply transition-all duration-200 ease-in-out hover:shadow-lg;
 }
 
 //swiper pagination
@@ -87,7 +87,7 @@
   @apply relative z-10 md:-mx-8 md:-my-6;
 
   .card {
-    @apply border-0 shadow-[0_1rem_3rem_rgba(0,0,0,.175)];
+    @apply border-0 shadow-md;
   }
 }
 

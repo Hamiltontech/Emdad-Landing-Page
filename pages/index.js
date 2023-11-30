@@ -21,7 +21,7 @@ const Home = ({ frontmatter }) => {
 
 
 
-
+ {/* Banner */}
 <main className="w-full h-[100vh]">
 <video
         autoPlay
@@ -75,27 +75,18 @@ const Home = ({ frontmatter }) => {
 </section> */}
 
       {/* Features */}
-      <section className="section bg-body">
+      <section className="section bg-primary">
         <div className="container">
-          <div className="text-center">
-            <h2>{markdownify(feature.title)}</h2>
+          <div className="text-center ">
+            <h2 cl>{markdownify(feature.title)}</h2>
           </div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {feature.features.map((item, i) => (
               <div
-                className="feature-card rounded-xl bg-white p-5 pb-8 text-center"
+                className="feature-card rounded-xl bg-white/10 p-5 pb-8 text-center text-white"
                 key={`feature-${i}`}
               >
-                {/* {item.icon && (
-                  <Image
-                    className="mx-auto"
-                    src={item.icon}
-                    width={30}
-                    height={30}
-                    alt=""
-                  />
-                )} */}
-                <div className="mt-4">
+                <div className="mt-4 ">
                   {markdownify(item.name, "h3", "h5")}
                   <p className="mt-3">{item.content}</p>
                 </div>
@@ -105,9 +96,7 @@ const Home = ({ frontmatter }) => {
         </div>
       </section>
 
-      <div className="flex justify-center ">
-        <hr className="w-[50%] text-white"/>
-      </div>
+     
 
       {/* Stats */}
       <section className="">

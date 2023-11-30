@@ -22,7 +22,7 @@ h1,
 
 h2,
 .h2 {
-  @apply text-h2-sm md:text-h2;
+  @apply text-h2-sm md:text-h2 text-white;
 }
 
 h3,
@@ -38,7 +38,7 @@ h4,
 
 h5,
 .h5 {
-  @apply text-h5;
+  @apply text-h5 text-white;
 }
 
 h6,
