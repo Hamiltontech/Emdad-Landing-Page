@@ -78,7 +78,7 @@ const Home = ({ frontmatter }) => {
       <section className="section bg-primary">
         <div className="container">
           <div className="text-center ">
-            <h2 cl>{markdownify(feature.title)}</h2>
+            <h2>{markdownify(feature.title)}</h2>
           </div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {feature.features.map((item, i) => (
