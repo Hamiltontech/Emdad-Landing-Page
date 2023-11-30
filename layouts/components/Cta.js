@@ -5,7 +5,7 @@ import Link from "next/link";
 function Cta({ cta }) {
   return (
     <section className="section px-4 bg-primary">
-      <div className="section container rounded-xl shadow bg-white">
+      <div className="section container rounded-xl  bg-white/10 shadow-md shadow-primary">
         <div className="row  mx-auto items-center justify-center">
           <div className="md:col-5 lg:col-4">
             <Image
@@ -17,8 +17,8 @@ function Cta({ cta }) {
             />
           </div>
           <div className="mt-5 text-center md:mt-0 md:text-left md:col-6 lg:col-5">
-            <h2>{cta?.title}</h2>
-            <p className="mt-6">{markdownify(cta?.content)}</p>
+            <h2 className="text-white">{cta?.title}</h2>
+            <p className="mt-6 text-white">{markdownify(cta?.content)}</p>
             {cta.button.enable && (
               <Link
                 className="btn text-white border-transparent z-[1]  rounded-[30px] relative hover:shadow-[0_12px_24px_-6px_rgba(45,67,121,.1)] transition-all bg-[#ef7756] mt-4"

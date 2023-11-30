@@ -10,13 +10,13 @@ const Footer = () => {
   const { copyright, footer_content } = config.params;
   const { footer } = menu;
   return (
-    <footer className="section bg-white pb-0">
+    <footer className="section pb-0 bg-primary text-white">
       <div className="container">
         {/* footer menu */}
-        <div className="row">
+        <div className="row ">
           {footer.map((col) => {
             return (
-              <div className="mb-12 sm:col-6 lg:col-3" key={col.name}>
+              <div className="mb-12 sm:col-6 lg:col-3 " key={col.name}>
                 {markdownify(col.name, "h2", "h4")}
                 <ul className="mt-6">
                   {col?.menu.map((item) => (
@@ -44,11 +44,11 @@ const Footer = () => {
             <Social source={social} className="social-icons mb-8" />
           </div>
         </div>
+      </div>
         {/* copyright */}
-        <div className="border-t border-border py-6">
+        <div className="  py-6 bg-[#111827]">
           {markdownify(copyright, "p", "text-sm text-center")}
         </div>
-      </div>
     </footer>
   );
 };

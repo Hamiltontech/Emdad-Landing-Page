@@ -11,6 +11,7 @@ import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
 
 
+
 const Home = ({ frontmatter }) => {
   const { banner, feature, services, workflow, call_to_action } = frontmatter;
   const { title } = config.site;
@@ -18,34 +19,8 @@ const Home = ({ frontmatter }) => {
   return (
     <Base title={title}>
       {/* Banner */}
-      {/* <section className="pb-[50px] bg-cover bg-fixed h-[750px]" style={{backgroundImage: 'url("/images/Hero.png")'}}>
-        <div className=" bg-[#192435]/30 w-full h-[750px] relative">
-          <div className="row text-left ">
-            <div className="mx-auto lg:col-10 ">
-              <h1 className="text-white font-extrabold">{banner.title}</h1>
-              <p className="mt-4 text-white/80">{markdownify(banner.content)}</p>
-              {banner.button.enable && (
-                <Link
-                  className="btn btn-primary mt-4"
-                  href={banner.button.link}
-                  rel={banner.button.rel}
-                >
-                  {banner.button.label}
-                </Link>
-              )}
-              <Image
-                className="mx-auto mt-12"
-                src={banner.image}
-                width={750}
-                height={390}
-                alt="banner image"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section> */}
       <section class="bg-white dark:bg-gray-900 section bg-cover bg-fixed h-[750px]" style={{backgroundImage: 'url("https://i.imgur.com/ATdkAwx.jpg")'}}>
+        
         <div className="w-full m-0 p-0 bg-black/30 h-[750px]">
     <div class="grid max-w-screen-xl px-4  mx-auto lg:gap-8 xl:gap-0  lg:grid-cols-12 pt-[200px] md:pt-[200px]">
         <div class="mr-auto place-self-center lg:col-span-7">
@@ -103,7 +78,7 @@ const Home = ({ frontmatter }) => {
 
       {/* Stats */}
       <section className="">
-      <div class="bg-[#192435] py-24 sm:py-32">
+      <div class="bg-[#111827] py-24 sm:py-24">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:max-w-none">
       <div class="text-center space-y-4">
@@ -113,19 +88,19 @@ const Home = ({ frontmatter }) => {
         </p>
       </div>
       <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-full text-center sm:grid-cols-2 lg:grid-cols-4">
-        <div class="flex flex-col bg-white/5 p-8">
+        <div class="flex flex-col bg-white/10 p-8">
           <dt class="text-sm font-semibold leading-6 text-gray-300">words written in 2023</dt>
           <dd class="order-first text-3xl font-semibold tracking-tight text-white">12 million</dd>
         </div>
-        <div class="flex flex-col bg-white/5 p-8">
+        <div class="flex flex-col bg-white/10 p-8">
           <dt class="text-sm font-semibold leading-6 text-gray-300">episodes uploaded</dt>
           <dd class="order-first text-3xl font-semibold tracking-tight text-white">10k</dd>
         </div>
-        <div class="flex flex-col bg-white/5 p-8">
+        <div class="flex flex-col bg-white/10 p-8">
           <dt class="text-sm font-semibold leading-6 text-gray-300">hours of media</dt>
           <dd class="order-first text-3xl font-semibold tracking-tight text-white">6.6k</dd>
         </div>
-        <div class="flex flex-col bg-white/5 p-8">
+        <div class="flex flex-col bg-white/10 p-8">
           <dt class="text-sm font-semibold leading-6 text-gray-300">answers</dt>
           <dd class="order-first text-3xl font-semibold tracking-tight text-white">2.1k</dd>
         </div>
@@ -160,12 +135,14 @@ const Home = ({ frontmatter }) => {
 
   {/* blog posts */}
 
+      {/* Partners */}
+  <Partners />
 
       {/* Cta */}
       <Cta cta={call_to_action} />
 
-      {/* Partners */}
-  <Partners />
+
+  
     </Base>
   );
 };
