@@ -10,11 +10,31 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
 import { getListPage } from "../lib/contentParser";
 
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { set } from "date-fns";
+
 
 
 const Home = ({ frontmatter }) => {
   const { banner, feature, services, workflow, call_to_action } = frontmatter;
   const { title } = config.site;
+
+  const [stats, setStats] = useState([])
+  const [features, setFeatures] = useState([])
+
+  useEffect(()=>{
+    axios.get("https://strapi-155887-0.cloudclusters.net/api/statistics").then((res)=>{
+      setStats(res.data.data)
+    }).catch((err)=>{
+      console.log(err)
+    })
+    axios.get("https://strapi-155887-0.cloudclusters.net/api/features").then((res)=>{
+      setFeatures(res.data.data)
+    }).catch((err)=>{
+      console.log(err)
+    })
+  }, [])
 
   return (
     <Base title={title}>
@@ -77,18 +97,18 @@ const Home = ({ frontmatter }) => {
       {/* Features */}
       <section className="section bg-primary">
         <div className="container">
-          <div className="text-center ">
-            <h2>{markdownify(feature.title)}</h2>
+          <div className="text-center">
+            <h2>Why Us ?</h2>
           </div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
-            {feature.features.map((item, i) => (
+            {features?.map((item, i) => (
               <div
                 className="feature-card rounded-xl bg-white/10 p-5 pb-8 text-center text-white"
                 key={`feature-${i}`}
               >
                 <div className="mt-4 ">
-                  {markdownify(item.name, "h3", "h5")}
-                  <p className="mt-3">{item.content}</p>
+                  {markdownify(item?.attributes?.Title, "h3", "h5")}
+                  <p className="mt-3">{item?.attributes?.Description}</p>
                 </div>
               </div>
             ))}
@@ -109,23 +129,21 @@ const Home = ({ frontmatter }) => {
           size.
         </p>
       </div>
-      <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-full text-center sm:grid-cols-2 lg:grid-cols-4">
-        <div class="flex flex-col bg-white/10 p-8">
+      <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-lg text-center sm:grid-cols-2 lg:grid-cols-7">
+       
+       {stats.map((item)=>(
+        <>
+         <div class="flex flex-col bg-white/10 p-8">
+          <dt class="text-sm font-light leading-6 text-gray-300">{item?.attributes?.Title}</dt>
+          <dd class="order-first text-3xl font-semibold tracking-tight text-white">{item?.attributes?.Number}</dd>
+        </div>
+        </>
+       ))}
+        {/* <div class="flex flex-col bg-white/10 p-8">
           <dt class="text-sm font-semibold leading-6 text-gray-300">words written in 2023</dt>
           <dd class="order-first text-3xl font-semibold tracking-tight text-white">12 million</dd>
-        </div>
-        <div class="flex flex-col bg-white/10 p-8">
-          <dt class="text-sm font-semibold leading-6 text-gray-300">episodes uploaded</dt>
-          <dd class="order-first text-3xl font-semibold tracking-tight text-white">10k</dd>
-        </div>
-        <div class="flex flex-col bg-white/10 p-8">
-          <dt class="text-sm font-semibold leading-6 text-gray-300">hours of media</dt>
-          <dd class="order-first text-3xl font-semibold tracking-tight text-white">6.6k</dd>
-        </div>
-        <div class="flex flex-col bg-white/10 p-8">
-          <dt class="text-sm font-semibold leading-6 text-gray-300">answers</dt>
-          <dd class="order-first text-3xl font-semibold tracking-tight text-white">2.1k</dd>
-        </div>
+        </div> */}
+        
       </dl>
     </div>
   </div>
@@ -158,7 +176,7 @@ const Home = ({ frontmatter }) => {
   {/* blog posts */}
 
       {/* Partners */}
-  <Partners />
+       <Partners />
 
       {/* Cta */}
       <Cta cta={call_to_action} />
