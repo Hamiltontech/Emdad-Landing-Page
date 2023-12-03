@@ -6,7 +6,7 @@
     },
     {
       "name": "About",
-      "url": "/pricing"
+      "url": "/about"
     },
     {
       "name": "Blog",
@@ -27,11 +27,11 @@
       "menu": [
         {
           "text": "About",
-          "url": "/pricing"
+          "url": "/about"
         },
         {
           "text": "Team",
-          "url": "/pricing"
+          "url": "/about"
         },
         {
           "text": "Privacy Policy",
