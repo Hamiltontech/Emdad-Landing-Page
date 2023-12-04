@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper.min.css";
+import Process from "@layouts/Process";
 import { getListPage } from "../lib/contentParser";
 
 import axios from "axios";
@@ -68,6 +69,8 @@ const Home = ({ frontmatter }) => {
         </div>
 </div>
 </main>
+
+
      
 
 
@@ -175,8 +178,12 @@ const Home = ({ frontmatter }) => {
 
   {/* blog posts */}
 
+
       {/* Partners */}
        <Partners />
+
+{/* Process */}
+<Process />
 
       {/* Cta */}
       <Cta cta={call_to_action} />

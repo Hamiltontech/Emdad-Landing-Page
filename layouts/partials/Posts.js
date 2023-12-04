@@ -25,7 +25,7 @@ const Posts = ({ posts }) => {
           <div className="col-12 md:col-6">
             <h2 className="h3 mb-2 mt-4">
               <Link
-                href={`/${blog_folder}/${posts[0]?.attributes?.Title}`}
+                href={`/post/${posts[0]?.attributes?.Slug}`}
                 className="block hover:text-primary"
               >
                 {posts[0]?.attributes?.Title}
@@ -39,7 +39,7 @@ const Posts = ({ posts }) => {
             </p>
             <Link
               className="btn btn-primary mt-4"
-              href={`/${blog_folder}/${posts[0]?.attributes?.Title}`}
+              href={`/post/${posts[0]?.attributes?.Slug}`}
               rel=""
             >
               Read More
@@ -60,7 +60,7 @@ const Posts = ({ posts }) => {
           )}
           <h2 className="h3 mb-2 mt-4">
             <Link
-              href={`/${blog_folder}/${post?.attributes?.Title}`}
+              href={`/post/${post?.attributes?.Slug}`}
               className="block text-white hover:text-secondary ease-in-out duration-200 text-xl font-bold"
             >
               {post?.attributes?.Title}

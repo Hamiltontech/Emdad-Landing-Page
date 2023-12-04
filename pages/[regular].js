@@ -6,6 +6,7 @@ import Faq from "@layouts/Faq";
 import Pricing from "@layouts/Pricing";
 import About from "@layouts/About";
 import { getRegularPage, getSinglePage } from "@lib/contentParser";
+import Post from "./post/[slug]";
 
 // for all regular pages
 const RegularPages = ({ data }) => {
@@ -26,6 +27,10 @@ const RegularPages = ({ data }) => {
         <NotFound data={data} />
       ) : layout === "contact" ? (
         <Contact data={data} />
+        
+      ): layout === "post" ? (
+        <Post data={data} />
+        
       ) : layout === "about" ? (
         <About data={data} />
       ) : layout === "pricing" ? (
