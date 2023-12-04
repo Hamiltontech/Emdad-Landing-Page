@@ -79,7 +79,9 @@ const PostSingle = ({ data, postID, slug }) => {
                 ))}
               </div>
             </article>
-            <div className="flex">
+
+            <p className="text-center text-sm"> Share Article Via..</p>
+            <div className="flex  container justify-center">
       <div className="flex p-1 lg:my-1 mx-1 hover:scale-110">
         <EmailShareButton
           // url=""
@@ -92,7 +94,7 @@ const PostSingle = ({ data, postID, slug }) => {
 
       <div className="flex p-1 lg:my-1  mx-1 hover:scale-110">
         <FacebookShareButton
-          url={"https://strapi-155887-0.cloudclusters.net/post/" + slug}
+          url={"https://emdad-landing-page.vercel.app/post/" + slug}
           quote={love}
           hashtag={"#Emdad-Digital-Transformation"}
         >
@@ -102,7 +104,7 @@ const PostSingle = ({ data, postID, slug }) => {
 
       <div className="flex p-1  lg:my-1 mx-1 hover:scale-110">
         <FacebookMessengerShareButton
-          url={"https://strapi-155887-0.cloudclusters.net/post/" + slug}
+          url={"https://emdad-landing-page.vercel.app/post/" + slug}
           appId={""}
         >
           <RiMessengerFill size={25} />
@@ -111,7 +113,7 @@ const PostSingle = ({ data, postID, slug }) => {
 
       <div className="flex p-1 lg:my-1 mx-1 hover:scale-110">
         <PinterestShareButton
-          url={"https://strapi-155887-0.cloudclusters.net/post/" + slug}
+          url={"https://emdad-landing-page.vercel.app/post/" + slug}
           media={love}
         >
           <BsPinterest size={25} />
@@ -120,7 +122,7 @@ const PostSingle = ({ data, postID, slug }) => {
 
       <div className="flex p-1 lg:my-1 mx-1 hover:scale-110">
         <TwitterShareButton
-          url={"https://strapi-155887-0.cloudclusters.net/post/" + slug}
+          url={"https://emdad-landing-page.vercel.app/post/" + slug}
           title={love}
         >
           <AiOutlineTwitter size={25} />
@@ -129,7 +131,7 @@ const PostSingle = ({ data, postID, slug }) => {
 
       <div className="flex p-1 lg:my-1 mx-1 hover:scale-110">
         <WhatsappShareButton
-          url={"https://strapi-155887-0.cloudclusters.net/post/" + slug}
+          url={"https://emdad-landing-page.vercel.app/post/" + slug}
           title={love}
           separator=":: "
         >
