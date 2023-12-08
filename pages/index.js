@@ -119,7 +119,6 @@ const Home = ({ frontmatter }) => {
         </div>
       </section>
 
-     
 
       {/* Stats */}
       <section className="">
@@ -155,6 +154,7 @@ const Home = ({ frontmatter }) => {
 
    
 
+
       {/* workflow */}
       {/* <section className="section pb-0">
         <div className="mb-8 text-center">
@@ -182,13 +182,14 @@ const Home = ({ frontmatter }) => {
       {/* Partners */}
        <Partners />
 
-{/* Process */}
-<Process />
 
       {/* Cta */}
       <Cta cta={call_to_action} />
 
 
+    
+{/* Process */}
+<Process />
   
     </Base>
   );
