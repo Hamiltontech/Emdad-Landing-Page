@@ -51,7 +51,7 @@ const PostSingle = ({ data, postID, slug }) => {
     data?.attributes?.Image?.data?.attributes?.url;
   return (
     <Base title={title}>
-      <section className="section bg-primary text-white  ">
+      <section className="section bg-primary text-white">
         <div className="container pt-12">
           <div className="row">
             <article className="col-12 mx-auto text-center md:col-8">
@@ -65,7 +65,7 @@ const PostSingle = ({ data, postID, slug }) => {
                   className="rounded-lg"
                 />
               )}
-              {markdownify(title, "h1", "h2 mb-6 mt-6 text-left ")}
+              {markdownify(title, "h1", "h2 mb-6 mt-6 text-left")}
 
               <div className="content mb-16 text-left text-white">
                 {/* <MDXRemote {...data?.attributes?.Abstract} components={shortcodes} /> */}

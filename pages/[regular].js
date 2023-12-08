@@ -7,6 +7,8 @@ import Pricing from "@layouts/Pricing";
 import About from "@layouts/About";
 import { getRegularPage, getSinglePage } from "@lib/contentParser";
 import Post from "./post/[slug]";
+import Privacy from "@layouts/Privacy"
+import Terms from "@layouts/Terms";
 
 // for all regular pages
 const RegularPages = ({ data }) => {
@@ -30,6 +32,11 @@ const RegularPages = ({ data }) => {
         
       ): layout === "post" ? (
         <Post data={data} />
+        ): layout === "terms" ? (
+          <Terms data={data} />
+        
+      ): layout === "privacy" ? (
+        <Privacy data={data} />
         
       ) : layout === "about" ? (
         <About data={data} />

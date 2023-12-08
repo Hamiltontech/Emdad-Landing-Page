@@ -21,9 +21,11 @@ const Process = () => {
 
         {/* first step */}
         {start && (
-         <></>
+         <><h5 className="text-left text-sm">Request Settings</h5><img src="https://i.imgur.com/WWzCrW1.png" width={300} height={800}/></>
         )}
       </div>
+
+      
     </section>
   );
 };
