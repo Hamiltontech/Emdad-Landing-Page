@@ -13,8 +13,16 @@ import { getListPage } from "../lib/contentParser";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { set } from "date-fns";
+import About from "@layouts/About";
+import Faq from "@layouts/Faq";
+import { useRouter } from "next/router";
+
 
 const Home = ({ frontmatter }) => {
+
+  
+  const router = useRouter();
+
   const { banner, feature, services, workflow, call_to_action } = frontmatter;
   const { title } = config.site;
 
@@ -44,10 +52,15 @@ const Home = ({ frontmatter }) => {
 
   return (
     <Base title={title} arabic={arabic} setArabic={setArabic}>
+<div className="hidden">
+<About arabic={arabic} setArabic={setArabic}/>
+<Faq arabic={arabic} setArabic={setArabic}/>
+</div>
+      
       {/* Banner */}
-      <main className="h-[100vh] w-full" dir={arabic ? `rtl` : `ltr`}>
+      <main className="h-[100vh] w-full" dir={router.locale === "ar" ? `rtl` : `ltr`}>
         <video
-          autoPlay
+          autoPlay 
           loop
           muted
           className=" h-full w-full object-cover"
@@ -57,7 +70,7 @@ const Home = ({ frontmatter }) => {
           <div className=" m-0 h-[100vh] w-full bg-black/40 p-0">
             <div class="mx-auto grid max-w-screen-xl px-4 pt-[300px] md:pt-[300px] lg:grid-cols-12 lg:gap-8 xl:gap-0">
               <div class="mr-auto place-self-center lg:col-span-7">
-                {arabic ? (
+                {router.locale === "ar" ? (
                   <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
                     منصة امداد الرقمية
                   </h1>
@@ -67,7 +80,7 @@ const Home = ({ frontmatter }) => {
                   </h1>
                 )}
                 <p class="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-2 lg:text-xl">
-                  {arabic ? (
+                  {router.locale === "ar" ? (
                     <span className="text-white font-extrabold">
                       التحول الرقمي للعمليات الشرائية واللوجستية لقطاع الأعمال
                     </span>
@@ -76,7 +89,7 @@ const Home = ({ frontmatter }) => {
                   )}
                 </p>
                 <p >
-                  {arabic ? (
+                  {router.locale === "ar" ? (
                     <span className="text-white/90 lg:mb-8 " >
                       {" "}
                       نظام سحابي متكامل وسهل الاستخدام لإدارة العمليات الشرائية
@@ -94,7 +107,7 @@ const Home = ({ frontmatter }) => {
                     </span>
                   )}
                 </p>
-                {arabic ? 
+                {router.locale === "ar" ? 
               <>
                 <a
                   href="#"
@@ -162,7 +175,7 @@ const Home = ({ frontmatter }) => {
       <section className="section bg-primary">
         <div className="container">
           <div className="text-center">
-           {arabic ? <h2 className="font-extralight"> لماذا تختار منصة إمداد الرقمية؟</h2> : <h2>Why Us ?</h2>} 
+           {router.locale === "ar" ? <h2 className="font-extralight"> لماذا تختار منصة إمداد الرقمية؟</h2> : <h2>Why Us ?</h2>} 
           </div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {features?.map((item, i) => (
@@ -241,7 +254,9 @@ const Home = ({ frontmatter }) => {
       <Cta cta={call_to_action} />
 
       {/* Process */}
-      <Process />
+      {/* <Process /> */}
+
+ 
     </Base>
   );
 };

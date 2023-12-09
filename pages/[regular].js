@@ -10,12 +10,15 @@ import Post from "./post/[slug]";
 import Privacy from "@layouts/Privacy"
 import Terms from "@layouts/Terms";
 import { useState } from "react";
+import Process from "@layouts/Process";
+import { useRouter } from "next/router";
 
 // for all regular pages
 const RegularPages = ({ data }) => {
-  const { title, meta_title, description, image, noindex, canonical, layout, } =
-    data.frontmatter;
+  const { title, meta_title, description, image, noindex, canonical, layout} =
+  data.frontmatter;
   const { content } = data;
+  const router = useRouter();
 
   return (
     <Base
@@ -30,15 +33,14 @@ const RegularPages = ({ data }) => {
         <NotFound data={data} />
       ) : layout === "contact" ? (
         <Contact data={data} />
-        
-      ): layout === "post" ? (
+      ) : layout === "process" ? (
+        <Process data={data} />
+      ) : layout === "post" ? (
         <Post data={data} />
-        ): layout === "terms" ? (
+      ) : layout === "terms" ? (
           <Terms data={data} />
-        
-      ): layout === "privacy" ? (
+      ) : layout === "privacy" ? (
         <Privacy data={data} />
-        
       ) : layout === "about" ? (
         <About data={data} />
       ) : layout === "pricing" ? (
@@ -71,6 +73,7 @@ export const getStaticPaths = async () => {
 
 // for regular page data
 export const getStaticProps = async ({ params }) => {
+
   const { regular } = params;
   const regularPage = await getRegularPage(regular);
 

@@ -1,22 +1,16 @@
-import Link from "next/link";
-import Cta from "./components/Cta";
-import { VscWorkspaceTrusted } from "react-icons/vsc";
+
 import { FaHandshake } from "react-icons/fa";
 import { FaArrowsTurnToDots } from "react-icons/fa6";
 import { MdLightbulbOutline } from "react-icons/md";
 import { GiBrain } from "react-icons/gi";
 import { RiUserStarFill } from "react-icons/ri";
 import { FaPeopleLine } from "react-icons/fa6";
-
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 
-function About({ data }) {
-  const {
-    frontmatter: { title, plans, call_to_action },
-  } = data;
-
+function About() {
   const [team, setTeam] = useState([])
   useEffect(()=>{
     axios.get("https://strapi-155887-0.cloudclusters.net/api/teams?populate=*").then((res)=>{
@@ -27,7 +21,6 @@ function About({ data }) {
   }, [])
 
 
-  console.log(team)
   return (
     <>
       {/* banner */}
@@ -79,14 +72,7 @@ function About({ data }) {
                 </p>
               </div>
             </div>
-            {/* <div className="feature-card rounded-xl bg-white/10 p-5 pb-8 text-center">
-              <div className="mt-4">
-                <h4>Our Values</h4>
-                <p className="mt-3 text-white">
-                Trust - Collaboration - Flexibility - Commitment - Innovation - Creativity - Achievement.
-                </p>
-              </div>
-            </div> */}
+          
           </div>
         </div>
       </section>
@@ -97,12 +83,7 @@ function About({ data }) {
         <h3 className="text-white">Our Vlaues</h3>
           <div className="text-center"></div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 justify-center ">
-            {/* <div className="feature-card rounded-full  p-5 pb-8 text-center">
-              <div className="mt-4 flex justify-center gap-2">
-              <VscWorkspaceTrusted size={20} color="white" className="mt-1" />
-                <h4>Trust </h4>
-              </div>
-            </div> */}
+        
             <div className="feature-card rounded-full  p-5 pb-8 text-center">
               <div className="mt-4 flex justify-center gap-2">
               < FaPeopleLine size={30} color="white" className="" />
@@ -139,64 +120,18 @@ function About({ data }) {
                 <h4>Achievement </h4>
               </div>
             </div>
-           
-           
           </div>
         </div>
       </section>
 
-{/* 
-      <section className="section pb-0">
-        <div className="container pt-12">
-          <h1 className="text-center font-normal">Who We Are</h1>
-          <div className="section row -mt-10 justify-center md:mt-0">
-            {plans.map((plan, index) => (
-              <div
-                className={`col-12 md:col-4 ${
-                  !plan.recommended ? "lg:px-0" : "col-recommended"
-                }`}
-                key={plan.title + index}
-              >
-                <div className="card text-center">
-                  <h4>{plan.title}</h4>
-                  <div className="mt-5">
-                    <span className="text-5xl text-dark">${plan.price}</span>
-                    <span>/ {plan.type}</span>
-                  </div>
-                  <h5 className="mt-2 font-normal text-text">
-                    {plan.subtitle}
-                  </h5>
-                  <ul className="mt-5">
-                    {plan.features.map((feature, index) => (
-                      <li className="mb-[10px] leading-5" key={index}>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    className={`btn mt-5 ${
-                      plan.recommended ? "btn-primary" : "btn-outline-primary"
-                    }`}
-                    href={plan.button.link}
-                    rel={plan.button.rel}
-                  >
-                    {plan.button.label}
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+
 
       {/* team */}
       <section className="section bg-primary">
         <div class="container mx-auto my-24 md:px-6 ">
           <section class="mb-32 text-center">
             <h2 class="mb-32 text-3xl font-bold">Meet Our Team</h2>
-
             <div class="grid gap-x-6 md:grid-cols-4 lg:gap-x-12">
-
               {team?.map((item)=>(
                 <>
               <div class="mb-24 md:mb-0">
@@ -223,7 +158,7 @@ function About({ data }) {
           </section>
         </div>
       </section>
-      <Cta cta={call_to_action} />
+      {/* <Cta cta={call_to_action} /> */}
     </>
   );
 }

@@ -2,14 +2,13 @@ import { markdownify } from "@lib/utils/textConverter";
 import { FaCircleCheck } from "react-icons/fa6";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { IoTerminal } from "react-icons/io5";
 
-function Faq({ data }) {
-  const { frontmatter } = data;
-  const { title, faqs } = frontmatter;
+function Faq() {
+  // const { frontmatter } = data;
+  // const { title, faqs } = frontmatter;
+
 
   const [faq, setFaq] = useState([])
-  
 
   useEffect(()=>{
 axios.get("https://strapi-155887-0.cloudclusters.net/api/faqs").then((res)=>{
@@ -21,8 +20,9 @@ axios.get("https://strapi-155887-0.cloudclusters.net/api/faqs").then((res)=>{
 
   return (
     <section className="section bg-primary">
+     
       <div className="container pt-12 text-white">
-        {markdownify(title, "h1", "text-center font-normal text-white")}
+        {markdownify("Frequently Asked Questions", "h1", "text-center font-normal text-white")}
         <div className="section row -mt-6 rounded-xl">
           {faq?.map((faq, index) => (
             <div key={index} className="col-12 mt-6 md:col-6 items-stretch flex ">

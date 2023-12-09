@@ -7,19 +7,22 @@ import React, { useState } from "react";
 import { GrLanguage } from "react-icons/gr";
 
 
-const Header = ({arabic, setArabic}) => {
-
-const handleEnglish = (e) =>{
-e.preventDefault()
-setArabic(false)
-}
-const handleArabic = (e) =>{
-  e.preventDefault()
-  setArabic(true)
-  }
-
+const Header = ({ arabic, setArabic }) => {
+  
   //router
   const router = useRouter();
+
+  const handleEnglish = (e) => {
+    e.preventDefault();
+    router.locale = "en-US"
+    setArabic(false);
+  };
+  const handleArabic = (e) => {
+    e.preventDefault();
+    setArabic(true);
+    router.locale = "ar"
+  };
+
 
   // distructuring the main menu from menu object
   const { main } = menu;
@@ -32,17 +35,21 @@ const handleArabic = (e) =>{
   const { enable, label, link } = config.nav_button;
 
   return (
-    <header className="header" dir={arabic ? `rtl` : `ltr`}>
+    <header className="header" dir={router.locale === "ar" ? `rtl` : `ltr`}>
       <nav className="navbar mx-auto max-w-[1300px] px-4">
         {/* logo */}
         <div className="order-0 -mt-4">
-        {arabic ? <Logo src="/images/arabic-logo.png" />: <Logo src={logo} />}  
+          {router.locale === "ar" ? (
+            <Logo src="/images/arabic-logo.png" />
+          ) : (
+            <Logo src={logo} />
+          )}
         </div>
 
         {/* navbar toggler */}
         <button
           id="show-button"
-          className="order-2 flex cursor-pointer items-center md:hidden md:order-1 mt-4"
+          className="order-2 mt-4 flex cursor-pointer items-center md:order-1 md:hidden"
           onClick={() => setNavOpen(!navOpen)}
         >
           {navOpen ? (
@@ -74,7 +81,7 @@ const handleArabic = (e) =>{
                 {menu.hasChildren ? (
                   <li className="nav-item nav-dropdown group relative ">
                     <span className="nav-link inline-flex items-center">
-                    {arabic ? menu.arabic : menu.name}
+                      {router.locale === "ar" ? menu.arabic : menu.name}
                       <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                       </svg>
@@ -91,38 +98,36 @@ const handleArabic = (e) =>{
                         </li>
                       ))}
                     </ul>
-                    
                   </li>
                 ) : (
-                  <>                  <li className="nav-item">
-                    <Link
-                      href={menu.url}
-                      onClick={() => setNavOpen(false)}
-                      className={`nav-link block ${
-                        router.asPath === menu.url ? "nav-link-active" : ""
-                      }`}
-                    >
-                      {arabic ? menu.arabic : menu.name}
-                    </Link>
-                  </li>
-                    
-                    </>
+                  <>
+                    {" "}
+                    <li className="nav-item">
+                      <Link
+                        href={menu.url}
+                        onClick={() => setNavOpen(false)}
+                        className={`nav-link block ${
+                          router.asPath === menu.url ? "nav-link-active" : ""
+                        }`}
+                      >
+                        {router.locale === "ar" ? menu.arabic : menu.name}
+                      </Link>
+                    </li>
+                  </>
                 )}
               </React.Fragment>
             ))}
 
-{arabic ? <button onClick={handleEnglish} className="hover:text-secondary ease-in-out duration-150">EN</button> 
-:
+            <button>
+              <Link 
+              href={router.asPath}
+              locale={router.locale === "en-US" ? "ar" : "en-US"}>
+                <button className="duration-150 ease-in-out hover:text-secondary">
+               <GrLanguage />
+               </button></Link>
+               </button>
+           
 
-<>
-             <button data-tooltip-target="tooltip-hover" data-tooltip-trigger="hover"  onClick={handleArabic} className="hover:text-secondary ease-in-out duration-150"> <GrLanguage />
-             </button> 
-         
-             </>
-}
-
-
-            
             {enable && (
               <li className="md:hidden">
                 <Link
@@ -137,7 +142,7 @@ const handleArabic = (e) =>{
           </ul>
         </div>
         {enable && (
-          <div className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:ml-0 md:flex md:order-2">
+          <div className="d-flex order-1 ml-auto hidden min-w-[200px] items-center justify-end md:order-2 md:ml-0 md:flex">
             <Link className="btn btn-primary z-0 py-[14px]" href={link} rel="">
               {label}
             </Link>

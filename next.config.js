@@ -7,6 +7,10 @@ const nextConfig = {
 };
 
 module.exports = {
+  i18n: {
+    locales: ["en-US", "ar"],
+    defaultLocale: "en-US",
+  },
   image: {
     domains: ['https://strapi-155887-0.cloudclusters.net'],
 },

@@ -36,13 +36,49 @@ function Process() {
   }, []);
 
   return (
-    <div className="overflow-hidden flex section bg-gray-900">
+    <div className="overflow-hidden flex bg-gray-900">
       <div className="overflow-hidden container">
+        <h3 className='pt-24 text-center text-white'>Procurement System Process Simulation</h3>
         <div
           id="skills"
           ref={scroller}
-          className="flex overflow-x-hidden text-white w-[400vw] m-0 bg-gray-900 relative h-screen"
+          className="flex overflow-x-hidden text-white w-[400vw] m-0 bg-gray-900 relative h-screen "
         >
+
+          
+          <section
+            ref={skills}
+            className="skill-set w-[200vw] h-full bg-transparent ns-horizontal-section__item flex items-center z-50 justify-center"
+          >
+             Scroll to start
+          </section>
+          <section
+            ref={skills}
+            className="skill-set w-screen h-full bg-transparent ns-horizontal-section__item grid items-center  "
+          >
+            <p className='pt-30'>
+            Request Settings
+            </p>
+            <img
+              src="/images/step.png"
+              alt="1st image"
+              layout="fill"
+              className="max-w-[70vw] max-h-[60vh] m-auto"
+            />
+            <p>Requisition settings are integral to creating requisitions; they allow suppliers to extend accurate and suitable quotations</p>
+          </section>
+          <section
+            ref={skills}
+            className="skill-setw-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
+          >
+            <Image
+              src="/images/step.png"
+              alt="1st image"
+              layout="fill"
+              objectFit="contain"
+              className="max-w-[70vw] max-h-[60vh] m-auto"
+            />
+          </section>
           <section
             ref={skills}
             className="skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
