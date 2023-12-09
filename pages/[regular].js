@@ -9,10 +9,11 @@ import { getRegularPage, getSinglePage } from "@lib/contentParser";
 import Post from "./post/[slug]";
 import Privacy from "@layouts/Privacy"
 import Terms from "@layouts/Terms";
+import { useState } from "react";
 
 // for all regular pages
 const RegularPages = ({ data }) => {
-  const { title, meta_title, description, image, noindex, canonical, layout } =
+  const { title, meta_title, description, image, noindex, canonical, layout, } =
     data.frontmatter;
   const { content } = data;
 

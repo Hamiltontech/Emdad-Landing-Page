@@ -10,6 +10,7 @@ function Faq({ data }) {
 
   const [faq, setFaq] = useState([])
   
+
   useEffect(()=>{
 axios.get("https://strapi-155887-0.cloudclusters.net/api/faqs").then((res)=>{
   setFaq(res.data.data)

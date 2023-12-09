@@ -4,8 +4,20 @@ import menu from "@config/menu.json";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { GrLanguage } from "react-icons/gr";
 
-const Header = () => {
+
+const Header = ({arabic, setArabic}) => {
+
+const handleEnglish = (e) =>{
+e.preventDefault()
+setArabic(false)
+}
+const handleArabic = (e) =>{
+  e.preventDefault()
+  setArabic(true)
+  }
+
   //router
   const router = useRouter();
 
@@ -20,11 +32,11 @@ const Header = () => {
   const { enable, label, link } = config.nav_button;
 
   return (
-    <header className="header">
+    <header className="header" dir={arabic ? `rtl` : `ltr`}>
       <nav className="navbar mx-auto max-w-[1300px] px-4">
         {/* logo */}
         <div className="order-0 -mt-4">
-          <Logo src={logo} />
+        {arabic ? <Logo src="/images/arabic-logo.png" />: <Logo src={logo} />}  
         </div>
 
         {/* navbar toggler */}
@@ -56,13 +68,13 @@ const Header = () => {
             navOpen ? "max-h-[1000px]" : "max-h-0"
           }`}
         >
-          <ul className="navbar-nav block w-full md:flex md:w-auto lg:space-x-2">
+          <ul className="navbar-nav block w-full md:flex md:w-auto lg:space-x-2 ">
             {main.map((menu, i) => (
               <React.Fragment key={`menu-${i}`}>
                 {menu.hasChildren ? (
-                  <li className="nav-item nav-dropdown group relative">
+                  <li className="nav-item nav-dropdown group relative ">
                     <span className="nav-link inline-flex items-center">
-                      {menu.name}
+                    {arabic ? menu.arabic : menu.name}
                       <svg className="h-4 w-4 fill-current" viewBox="0 0 20 20">
                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
                       </svg>
@@ -79,9 +91,10 @@ const Header = () => {
                         </li>
                       ))}
                     </ul>
+                    
                   </li>
                 ) : (
-                  <li className="nav-item">
+                  <>                  <li className="nav-item">
                     <Link
                       href={menu.url}
                       onClick={() => setNavOpen(false)}
@@ -89,12 +102,27 @@ const Header = () => {
                         router.asPath === menu.url ? "nav-link-active" : ""
                       }`}
                     >
-                      {menu.name}
+                      {arabic ? menu.arabic : menu.name}
                     </Link>
                   </li>
+                    
+                    </>
                 )}
               </React.Fragment>
             ))}
+
+{arabic ? <button onClick={handleEnglish} className="hover:text-secondary ease-in-out duration-150">EN</button> 
+:
+
+<>
+             <button data-tooltip-target="tooltip-hover" data-tooltip-trigger="hover"  onClick={handleArabic} className="hover:text-secondary ease-in-out duration-150"> <GrLanguage />
+             </button> 
+         
+             </>
+}
+
+
+            
             {enable && (
               <li className="md:hidden">
                 <Link

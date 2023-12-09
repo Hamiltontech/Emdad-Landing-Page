@@ -13,6 +13,8 @@ const Base = ({
   noindex,
   canonical,
   children,
+  arabic, 
+  setArabic
 }) => {
   const { meta_image, meta_author, meta_description } = config.metadata;
   const { base_url } = config.site;
@@ -89,10 +91,10 @@ const Base = ({
         />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Header />
+      <Header arabic={arabic} setArabic={setArabic} />
       {/* main site */}
       <main>{children}</main>
-      <Footer />
+      <Footer arabic={arabic} setArabic={setArabic} />
     </>
   );
 };

@@ -2,69 +2,85 @@
   "main": [
     {
       "name": "Home",
+      "arabic": "الرئيسية",
       "url": "/"
     },
     {
       "name": "About",
+      "arabic": "من نحن",
       "url": "/about"
     },
     {
       "name": "Blog",
+      "arabic": "أخبار ومقالات",
       "url": "/blogs"
     },
     {
       "name": "Contact",
+      "arabic": "تواصل معنا",
       "url": "/contact"
     },
     {
       "name": "FAQ",
+      "arabic": "أسئلة متكررة",
       "url": "/faq"
     }
   ],
   "footer": [
     {
       "name": "Who we are",
+      "arabic": "تعرف علينا",
       "menu": [
         {
           "text": "About",
+          "arabic": "من نحن",
           "url": "/about"
         },
         {
           "text": "Team",
+          "arabic": "فريقنا",
           "url": "/about"
         },
         {
           "text": "Privacy Policy",
+          "arabic": "سياسة الخصوصية",
           "url": "/privacy"
         },
         {
           "text": "Terms & Conditions",
+          "arabic": "الشروط والأحكام",
           "url": "/terms"
         }
       ]
     },
     {
       "name": "Explore",
+      "arabic": "تصفح",
       "menu": [
         {
           "text": "Services",
+          "arabic": "الخدمات",
           "url": "#"
         },
         {
           "text": "Blog",
+          "arabic": "الأخبار والمقالات",
           "url": "/blogs"
         },
         {
           "text": "FAQ",
+          "arabic": "اسئلة متكررة",
           "url": "/faq"
         }
       ]
     },
     {
       "name": "Reach Us",
+      "arabic": "تواصل معنا",
       "menu": [
         {
           "text": "Contact Us",
+          "arabic": "أرسل لنا",
           "url": "/contact"
         }
       ]

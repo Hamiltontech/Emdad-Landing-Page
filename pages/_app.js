@@ -12,6 +12,9 @@ const App = ({ Component, pageProps }) => {
   const pf = theme.fonts.font_family.primary;
   const sf = theme.fonts.font_family.secondary;
   const [fontcss, setFontcss] = useState();
+
+
+
   useEffect(() => {
     fetch(
       `https://fonts.googleapis.com/css2?family=${pf}${
@@ -33,6 +36,7 @@ const App = ({ Component, pageProps }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+
   return (
     <>
       <Head>
@@ -53,7 +57,7 @@ const App = ({ Component, pageProps }) => {
           content="width=device-width, initial-scale=1, maximum-scale=5"
         />
       </Head>
-      <Component {...pageProps} />
+      <Component {...pageProps}  />
     </>
   );
 };
