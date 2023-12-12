@@ -71,15 +71,15 @@ const Home = ({ frontmatter }) => {
             <div class="mx-auto grid max-w-screen-xl px-4 pt-[300px] md:pt-[300px] lg:grid-cols-12 lg:gap-8 xl:gap-0">
               <div class="mr-auto place-self-center lg:col-span-7">
                 {router.locale === "ar" ? (
-                  <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
+                  <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
                     منصة امداد الرقمية
                   </h1>
                 ) : (
-                  <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
+                  <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
                     Emdad Digital Platform
                   </h1>
                 )}
-                <p class="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-2 lg:text-xl">
+                <p class="mb-6 max-w-2xl font-light text-gray-300 md:text-lg lg:mb-2 lg:text-xl">
                   {router.locale === "ar" ? (
                     <span className="text-white font-extrabold">
                       التحول الرقمي للعمليات الشرائية واللوجستية لقطاع الأعمال
@@ -98,7 +98,7 @@ const Home = ({ frontmatter }) => {
                       واللوجستية.
                     </span>
                   ) : (
-                    <span className="text-white/50">
+                    <span className="text-gray-300">
                       A turnkey cloud-based solution that enables businesses of
                       all sizes to seamlessly manage all procurement and
                       logistics processes in one place. We connect enterprises
@@ -130,7 +130,7 @@ const Home = ({ frontmatter }) => {
 
                 <a
                   href="#"
-                  class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                  class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium  hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                 >
                   تواصل معنا
                 </a>
@@ -157,7 +157,7 @@ const Home = ({ frontmatter }) => {
                 </a>
                 <a
                   href="#"
-                  class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                  class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium  hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                 >
                   Speak to Sales
                 </a>
