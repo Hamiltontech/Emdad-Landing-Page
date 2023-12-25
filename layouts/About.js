@@ -1,4 +1,3 @@
-
 import { FaHandshake } from "react-icons/fa";
 import { FaArrowsTurnToDots } from "react-icons/fa6";
 import { MdLightbulbOutline } from "react-icons/md";
@@ -47,7 +46,6 @@ function About() {
 
       {/* vision and mission */}
       <section className="section bg-primary">
-    
         <div className="container">
           <div className="text-center"></div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-2">
@@ -123,7 +121,6 @@ function About() {
           </div>
         </div>
       </section>
-
 
 
       {/* team */}

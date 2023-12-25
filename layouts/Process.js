@@ -60,7 +60,7 @@ function Process() {
             Request Settings
             </p>
             <img
-              src="/images/step.png"
+              src="https://i.imgur.com/4ElmNeH.png"
               alt="1st image"
               layout="fill"
               className="max-w-[70vw] max-h-[60vh] m-auto"

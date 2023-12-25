@@ -15,12 +15,10 @@ import { useState, useEffect } from "react";
 import { set } from "date-fns";
 import About from "@layouts/About";
 import Faq from "@layouts/Faq";
+import Workflow from "@layouts/Workflow";
 import { useRouter } from "next/router";
 
-
 const Home = ({ frontmatter }) => {
-
-  
   const router = useRouter();
 
   const { banner, feature, services, workflow, call_to_action } = frontmatter;
@@ -52,15 +50,18 @@ const Home = ({ frontmatter }) => {
 
   return (
     <Base title={title} arabic={arabic} setArabic={setArabic}>
-<div className="hidden">
-<About arabic={arabic} setArabic={setArabic}/>
-<Faq arabic={arabic} setArabic={setArabic}/>
-</div>
-      
+      <div className="hidden">
+        <About arabic={arabic} setArabic={setArabic} />
+        <Faq arabic={arabic} setArabic={setArabic} />
+      </div>
+
       {/* Banner */}
-      <main className="h-[100vh] w-full" dir={router.locale === "ar" ? `rtl` : `ltr`}>
+      <main
+        className="h-[100vh] w-full"
+        dir={router.locale === "ar" ? `rtl` : `ltr`}
+      >
         <video
-          autoPlay 
+          autoPlay
           loop
           muted
           className=" h-full w-full object-cover"
@@ -81,16 +82,16 @@ const Home = ({ frontmatter }) => {
                 )}
                 <p class="mb-6 max-w-2xl font-light text-gray-300 md:text-lg lg:mb-2 lg:text-xl">
                   {router.locale === "ar" ? (
-                    <span className="text-white font-extrabold">
+                    <span className="font-extrabold text-white">
                       التحول الرقمي للعمليات الشرائية واللوجستية لقطاع الأعمال
                     </span>
                   ) : (
                     <>Digitally Transforming the B2B Procurement Experience!</>
                   )}
                 </p>
-                <p >
+                <p>
                   {router.locale === "ar" ? (
-                    <span className="text-white/90 lg:mb-8 " >
+                    <span className="text-white/90 lg:mb-8 ">
                       {" "}
                       نظام سحابي متكامل وسهل الاستخدام لإدارة العمليات الشرائية
                       واللوجستية للمنشآت بكافة أحجامها، تسهل عملية التواصل مع
@@ -98,7 +99,7 @@ const Home = ({ frontmatter }) => {
                       واللوجستية.
                     </span>
                   ) : (
-                    <span className="text-gray-300">
+                    <span className="mb-8 text-gray-300">
                       A turnkey cloud-based solution that enables businesses of
                       all sizes to seamlessly manage all procurement and
                       logistics processes in one place. We connect enterprises
@@ -107,75 +108,80 @@ const Home = ({ frontmatter }) => {
                     </span>
                   )}
                 </p>
-                {router.locale === "ar" ? 
-              <>
-                <a
-                  href="#"
-                  class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
-                >
-                  <svg
-                    class="-mr-1 ml-2 h-5 w-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
+                {router.locale === "ar" ? (
+                  <>
+                    <a
+                      href="#"
+                      class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
                     >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                      ></path>
-                  </svg>
+                      <svg
+                        class="-mr-1 ml-2 h-5 w-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
                       ابدأ الآن
-                </a>
+                    </a>
 
-                <a
-                  href="#"
-                  class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium  hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                >
-                  تواصل معنا
-                </a>
-
-              </>:
-              <>
-               <a
-                  href="#"
-                  class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
-                >
-                  Get started
-                  <svg
-                    class="-mr-1 ml-2 h-5 w-5"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium  hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 text-white dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                >
-                  Speak to Sales
-                </a>
-                </>
-              }
-               
+                    <a
+                      href="#"
+                      class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium  text-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                    >
+                      تواصل معنا
+                    </a>
+                  </>
+                ) : (
+                  <>
+                    <a
+                      href="#"
+                      class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
+                    >
+                      Get started
+                      <svg
+                        class="-mr-1 ml-2 h-5 w-5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </a>
+                    <a
+                      href="#"
+                      class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium  text-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                    >
+                      Speak to Sales
+                    </a>
+                  </>
+                )}
               </div>
             </div>
           </div>
         </div>
       </main>
 
-
       {/* Features */}
       <section className="section bg-primary">
         <div className="container">
           <div className="text-center">
-           {router.locale === "ar" ? <h2 className="font-extralight"> لماذا تختار منصة إمداد الرقمية؟</h2> : <h2>Why Us ?</h2>} 
+            {router.locale === "ar" ? (
+              <h2 className="font-extralight">
+                {" "}
+                لماذا تختار منصة إمداد الرقمية؟
+              </h2>
+            ) : (
+              <h2>Why Us ?</h2>
+            )}
           </div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {features?.map((item, i) => (
@@ -220,30 +226,11 @@ const Home = ({ frontmatter }) => {
                     </div>
                   </>
                 ))}
-                
               </dl>
             </div>
           </div>
         </div>
       </section>
-
-      {/* workflow */}
-      {/* <section className="section pb-0">
-        <div className="mb-8 text-center">
-          {markdownify(
-            workflow.title,
-            "h2",
-            "mx-auto max-w-[400px] font-bold leading-[44px]"
-          )}
-          {markdownify(workflow.description, "p", "mt-3")}
-        </div>
-        <Image
-          src={workflow.image}
-          alt="workflow image"
-          width={1920}
-          height={296}
-        />
-      </section> */}
 
       {/* blog posts */}
 
@@ -253,10 +240,8 @@ const Home = ({ frontmatter }) => {
       {/* Cta */}
       <Cta cta={call_to_action} />
 
-      {/* Process */}
-      {/* <Process /> */}
-
- 
+      {/* workflow */}
+      <Workflow />
     </Base>
   );
 };

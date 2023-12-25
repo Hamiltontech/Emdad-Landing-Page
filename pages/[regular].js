@@ -15,8 +15,7 @@ import { useRouter } from "next/router";
 
 // for all regular pages
 const RegularPages = ({ data }) => {
-  const { title, meta_title, description, image, noindex, canonical, layout} =
-  data.frontmatter;
+  const { title, meta_title, description, image, noindex, canonical, layout} = data.frontmatter;
   const { content } = data;
   const router = useRouter();
 
@@ -38,7 +37,7 @@ const RegularPages = ({ data }) => {
       ) : layout === "post" ? (
         <Post data={data} />
       ) : layout === "terms" ? (
-          <Terms data={data} />
+        <Terms data={data} />
       ) : layout === "privacy" ? (
         <Privacy data={data} />
       ) : layout === "about" ? (
