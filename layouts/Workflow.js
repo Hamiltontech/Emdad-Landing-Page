@@ -1,9 +1,48 @@
-"use client";
+'use client'
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useRef } from "react";
+
+
+
+
+
 
 const Workflow = () => {
+
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+   
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+    
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+      }
+    }
+  }
+  
+  if (typeof window !== "undefined") {
+    // Client-side-only code
+    window.addEventListener("scroll", reveal);
+  }
+  
+
+  // const ref1 = useRef();
+  //   const isVisible1 = useIsVisible(ref1);
+
+  //   const ref2 = useRef();
+  //   const isVisible2 = useIsVisible(ref2);
+
+  //   const ref3 = useRef();
+  //   const isVisible3 = useIsVisible(ref3);
+
+
   return (
     <div className="seciton bg-gray-900">
       <div className="container pb-8 text-white lg:pb-16 ">
@@ -19,8 +58,8 @@ const Workflow = () => {
         >
 
           {/* first */}
-          <li role="article" className="relative pl-8 ">
-            <div className="flex flex-1 flex-col gap-4">
+          <li role="article" className="relative pl-8 reveal ">
+            <div  className=" flex flex-1 flex-col gap-4 ">
               <a
                 href="#"
                 className="absolute -left-4 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full bg-black text-white ring-2 ring-white"
@@ -33,17 +72,20 @@ const Workflow = () => {
               <img
                 src="https://i.imgur.com/xa1huIL.png"
                 width={400}
+                className="reveal transition-opacity ease-in duration-700"
               />
-
+              <div className="reveal">
               <img
                 src="https://i.imgur.com/R4ll09X.png"
                 width={200}
                 height={400}
               />
+              </div>
             </div>
           </li>
+
           {/* second */}
-          <li role="article" className="relative pl-8 ">
+          <li role="article" className="relative pl-8 reveal">
             <div className="flex flex-1 flex-col gap-4">
               <a
                 href="#"
@@ -57,6 +99,7 @@ const Workflow = () => {
               <img
                 src="https://i.imgur.com/PnbFP8O.png"
                 width={400}
+                className="reveal transition-opacity ease-in duration-700"
               />
 
               <img
@@ -65,10 +108,11 @@ const Workflow = () => {
                 height={400}
               />
             </div>
-            <img src="https://i.imgur.com/A4DLBCT.png" width={200} className=""/>
+            <img src="https://i.imgur.com/A4DLBCT.png" width={200} className="reveal transition-opacity ease-in duration-300"/>
           </li>
-              {/* second */}
-              <li role="article" className="relative pl-8 ">
+
+              {/* Third */}
+              <li role="article" className="relative pl-8 reveal">
             <div className="flex flex-1 flex-col gap-4">
               <a
                 href="#"
@@ -82,6 +126,7 @@ const Workflow = () => {
               <img
                 src="https://i.imgur.com/P0DBn33.png"
                 width={400}
+                className="reveal transition-opacity ease-in duration-700"
               />
 
               <img
@@ -101,36 +146,20 @@ const Workflow = () => {
             <div className="flex flex-1 flex-col gap-4">
               <a
                 href="#"
-                className="absolute -left-4 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full text-white ring-2 ring-white"
+                className="absolute -left-4 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full text-white ring-2 ring-white bg-black"
               >
-                <img
-                  src="https://i.pravatar.cc/48?img=13"
-                  alt="user name"
-                  title="user name"
-                  width="48"
-                  height="48"
-                  className="max-w-full rounded-full"
-                />
+               <IoIosArrowDown size={50} />
               </a>
               <h4 className="flex flex-col items-start text-lg font-medium leading-8 text-slate-700 md:flex-row lg:items-center">
                 <span className="flex-1">
-                  Manos Gaitanakis
+                 Under
                   <span className="text-base font-normal text-slate-500">
-                    {" "}
-                    commented
+                    Progress
                   </span>
                 </span>
-                <span className="text-sm font-normal text-slate-400">
-                  {" "}
-                  3 hours ago
-                </span>
+               
               </h4>
-              <p className=" text-slate-500">
-                Love it! I really like how the nested feeds are working as well.
-                Is that going to be multi-nested? Or maybe stay in just one
-                level. Also any ides on how I can remove the time stamp from the
-                feeds?
-              </p>
+             
             </div>
           </li>
         </ul>
