@@ -17,6 +17,9 @@ import About from "@layouts/About";
 import Faq from "@layouts/Faq";
 import Workflow from "@layouts/Workflow";
 import { useRouter } from "next/router";
+import { IoMdArrowDropdownCircle } from "react-icons/io";
+
+
 
 const Home = ({ frontmatter }) => {
   const router = useRouter();
@@ -237,11 +240,11 @@ const Home = ({ frontmatter }) => {
       {/* Partners */}
       <Partners />
 
-      {/* Cta */}
-      <Cta cta={call_to_action} />
-
       {/* workflow */}
       <Workflow />
+
+      {/* Cta */}
+      <Cta cta={call_to_action} />
     </Base>
   );
 };
