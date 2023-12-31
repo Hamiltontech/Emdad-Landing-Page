@@ -56,7 +56,18 @@ function Process() {
       <div ref={triggerRef}>
         <div ref={sectionRef} className="scroll-section-inner">
           {/* first */}
-          <div className="scroll-section">
+          <div className="scroll-section w-full">
+            <div className="reveal grid gap-2 ">
+              <h3 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center text-white">
+                <span>Procurement System Process Simulation</span>
+              </h3>
+              <p className="reveal duration-300 ease-in text-white/60 text-center">Scroll..</p>
+            </div>
+          </div>
+         
+         
+          {/* first */}
+          <div className="scroll-section  w-full">
             <div className="reveal grid gap-2 ">
               <h4 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center">
                 <span> Request Settings</span>
@@ -77,7 +88,7 @@ function Process() {
           </div>
 
           {/* second */}
-          <div className="scroll-section">
+          <div className="scroll-section  w-full">
             <div className="reveal grid gap-2 ">
               <h4 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center">
                 <span> Request Creation</span>
@@ -105,7 +116,7 @@ function Process() {
           </div>
 
           {/* third */}
-          <div className="scroll-section">
+          <div className="scroll-section  w-full">
             <div className="reveal grid gap-2 ">
               <div className="reveal">
                 <h4 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center">
@@ -126,7 +137,7 @@ function Process() {
           </div>
 
           {/* fourth */}
-          <div className="scroll-section">
+          <div className="scroll-section  w-full">
             <div className="reveal grid gap-2">
               <h4 className="flex flex-col items-start text-lg font-medium leading-8  md:flex-row lg:items-center">
                 <span>Purcase Order Creation</span>
@@ -162,7 +173,7 @@ function Process() {
 
 
           {/* fifth */}
-          <div className="scroll-section">
+          <div className="scroll-section  w-full">
            {/* <h4>Delivery Process</h4> */}
               <div className="reveal grid gap-2">
               <h4 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center">
@@ -190,7 +201,7 @@ function Process() {
 
 
           {/* sixth */}
-          <div className="scroll-section">
+          <div className="scroll-section  w-full">
         
               <div className="reveal">
               <h4 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center">

@@ -173,8 +173,6 @@ const Home = ({ frontmatter }) => {
         </div>
       </main>
 
-      <Process />
-
       {/* Features */}
       <section className="section bg-primary">
         <div className="container">
@@ -243,8 +241,8 @@ const Home = ({ frontmatter }) => {
       <Partners />
 
       {/* workflow */}
-      <Workflow />
-
+      {/* <Workflow /> */}
+<Process />
       {/* Cta */}
       <Cta cta={call_to_action} />
     </Base>
