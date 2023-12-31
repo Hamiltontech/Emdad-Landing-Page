@@ -1,135 +1,212 @@
-import { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import gsap from 'gsap';
-
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import React, { useRef, useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 function Process() {
-  const scroller = useRef();
-  const skills = useRef();
-
+  const sectionRef = useRef(null);
+  const triggerRef = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
   useEffect(() => {
-    let skillSet = gsap.utils.toArray('.skill-set');
-
-    let to = gsap.to(skillSet, {
-      xPercent: () => -100 * (skillSet.length - 1),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: scroller.current,
-        markers: false,
-        pin: true,
-        pinSpacing: true,
-        scrub: 1,
-        invalidateOnRefresh: true,
-        anticipatePin: 1,
-        snap: 1 / (skillSet.length - 1),
-
-        end: () => '+=' + window.innerWidth,
+    const pin = gsap.fromTo(
+      sectionRef.current,
+      {
+        translateX: 0,
       },
-    });
-
+      {
+        translateX: "-300vw",
+        ease: "none",
+        duration: 1,
+        scrollTrigger: {
+          trigger: triggerRef.current,
+          start: "top top",
+          end: "2000 top",
+          scrub: 0.6,
+          pin: true,
+        },
+      }
+    );
     return () => {
-      to.kill();
+      pin.kill();
     };
   }, []);
 
-  return (
-    <div className="overflow-hidden flex bg-gray-900">
-      <div className="overflow-hidden container">
-        <h3 className='pt-24 text-center text-white'>Procurement System Process Simulation</h3>
-        <div
-          id="skills"
-          ref={scroller}
-          className="flex overflow-x-hidden text-white w-[400vw] m-0 bg-gray-900 relative h-screen "
-        >
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
 
-          
-          <section
-            ref={skills}
-            className="skill-set w-[200vw] h-full bg-transparent ns-horizontal-section__item flex items-center z-50 justify-center"
-          >
-             Scroll to start
-          </section>
-          <section
-            ref={skills}
-            className="skill-set w-screen h-full bg-transparent ns-horizontal-section__item grid items-center  "
-          >
-            <p className='pt-30'>
-            Request Settings
-            </p>
-            <img
-              src="https://i.imgur.com/4ElmNeH.png"
-              alt="1st image"
-              layout="fill"
-              className="max-w-[70vw] max-h-[60vh] m-auto"
-            />
-            <p>Requisition settings are integral to creating requisitions; they allow suppliers to extend accurate and suitable quotations</p>
-          </section>
-          <section
-            ref={skills}
-            className="skill-setw-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
-          >
-            <Image
-              src="/images/step.png"
-              alt="1st image"
-              layout="fill"
-              objectFit="contain"
-              className="max-w-[70vw] max-h-[60vh] m-auto"
-            />
-          </section>
-          <section
-            ref={skills}
-            className="skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
-          >
-            <Image
-              src="/images/step.png"
-              alt="1st image"
-              layout="fill"
-              objectFit="contain"
-              className="max-w-[70vw] max-h-[60vh] m-auto"
-            />
-          </section>
-          <section
-            ref={skills}
-            className="skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
-          >
-            <Image
-              src="/images/step.png"
-              alt="2ndimage"
-              layout="fill"
-              objectFit="contain"
-              className="max-w-[70vw] max-h-[60vh] m-auto"
-            />
-          </section>
-          <section
-            ref={skills}
-            className="skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
-          >
-            <Image
-              src="/images/step.png"
-              alt="2ndimage"
-              layout="fill"
-              objectFit="contain"
-              className="max-w-[70vw] max-h-[60vh] m-auto"
-            />
-          </section>
-          <section
-            ref={skills}
-            className="skill-set px-12 w-screen h-full bg-transparent ns-horizontal-section__item flex items-center z-50"
-          >
-            <Image
-              src="/images/step.png"
-              alt="2ndimage"
-              layout="fill"
-              objectFit="contain"
-              className="max-w-[70vw] max-h-[60vh] m-auto"
-            />
-          </section>
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+
+  if (typeof window !== "undefined") {
+    // Client-side-only code
+    window.addEventListener("scroll", reveal);
+  }
+
+  return (
+    <section className="scroll-section-outer bg-gray-900">
+      <div ref={triggerRef}>
+        <div ref={sectionRef} className="scroll-section-inner">
+          {/* first */}
+          <div className="scroll-section">
+            <div className="reveal grid gap-2 ">
+              <h4 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center">
+                <span> Request Settings</span>
+              </h4>
+              <img
+                src="https://i.imgur.com/xa1huIL.png"
+                width={400}
+                className="reveal transition-opacity duration-700 ease-in"
+              />
+              <div className="reveal">
+                <img
+                  src="https://i.imgur.com/R4ll09X.png"
+                  width={200}
+                  height={400}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* second */}
+          <div className="scroll-section">
+            <div className="reveal grid gap-2 ">
+              <h4 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center">
+                <span> Request Creation</span>
+              </h4>
+
+              <img
+                src="https://i.imgur.com/PnbFP8O.png"
+                width={400}
+                className="reveal transition-opacity duration-700 ease-in"
+              />
+
+              <img
+                src="https://i.imgur.com/uF1c5wL.png"
+                width={700}
+                height={400}
+              />
+              <div className="reveal">
+                <img
+                  src="https://i.imgur.com/A4DLBCT.png"
+                  width={200}
+                  className="reveal transition-opacity duration-300 ease-in"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* third */}
+          <div className="scroll-section">
+            <div className="reveal grid gap-2 ">
+              <div className="reveal">
+                <h4 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center">
+                  <span>Quotation Reception</span>
+                </h4>
+                <img
+                  src="https://i.imgur.com/P0DBn33.png"
+                  width={400}
+                  className="reveal transition-opacity duration-700 ease-in"
+                />
+                <img
+                  src="https://i.imgur.com/B5kasbH.png"
+                  width={700}
+                  height={400}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* fourth */}
+          <div className="scroll-section">
+            <div className="reveal grid gap-2">
+              <h4 className="flex flex-col items-start text-lg font-medium leading-8  md:flex-row lg:items-center">
+                <span>Purcase Order Creation</span>
+              </h4>
+              <div className="flex gap-4">
+                <img
+                  src="https://i.imgur.com/P0DBn33.png"
+                  width={400}
+                  className="reveal transition-opacity duration-700 ease-in"
+                />
+                <img
+                  src="https://i.imgur.com/P0DBn33.png"
+                  width={400}
+                  className="reveal transition-opacity duration-700 ease-in"
+                />
+              </div>
+              <img
+                src="https://i.imgur.com/oWDKpqf.png"
+                width={900}
+                height={400}
+                className="reveal"
+              />
+
+              <img
+                src="https://i.imgur.com/cqxBbxd.png"
+                width={300}
+                height={400}
+                className="reveal transition-opacity duration-700 ease-in"
+              />
+            </div>
+
+          </div>
+
+
+          {/* fifth */}
+          <div className="scroll-section">
+           {/* <h4>Delivery Process</h4> */}
+              <div className="reveal grid gap-2">
+              <h4 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center">
+                <span>Purcase Order Creation</span>
+              </h4>
+                <img
+                  src="https://i.imgur.com/2wjC5ZK.png"
+                  width={300}
+                  className="reveal transition-opacity duration-700 ease-in"
+                />
+              <img
+                src="https://i.imgur.com/fVLmLuq.png"
+                width={600}
+                height={400}
+                className="reveal"
+              />
+              <img
+                src="https://i.imgur.com/zJf9ARG.png"
+                width={400}
+                height={400}
+                className="reveal transition-opacity duration-700 ease-in"
+              />
+              </div>
+          </div>
+
+
+          {/* sixth */}
+          <div className="scroll-section">
+        
+              <div className="reveal">
+              <h4 className="flex flex-col items-start text-lg font-medium leading-8 md:flex-row lg:items-center">
+                <span>End of Payment</span>
+              </h4>
+              
+              <img
+                src="https://i.imgur.com/PMKxocm.png"
+                width={400}
+                height={400}
+              />
+            </div>
+            </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

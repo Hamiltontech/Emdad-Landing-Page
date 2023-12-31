@@ -4,7 +4,8 @@ layout: "contact"
 draft: false
 info: 
   title: Why you should contact us!
-  description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit recusandae voluptates doloremque veniam temporibus porro culpa ipsa, nisi soluta minima saepe laboriosam debitis nesciunt.
+  description: Have a question or need more information? Fill in the form and our team will be happy to assist you!
+
   contacts: 
     - "phone: +966 xx xxxx  xx"
     - "Mail: [info@emdadplatform.sa](mailto:info@emdadplatform.sa)"

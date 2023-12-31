@@ -7,13 +7,13 @@ function Cta({ cta }) {
     <section className="section px-4 bg-primary">
       <div className="section container rounded-xl  bg-white/10 shadow-md shadow-primary">
         <div className="row  mx-auto items-center justify-center">
-          <div className="md:col-5 lg:col-4">
+          <div className="md:col-5 lg:col-2">
             <Image
               className="w-full"
-              src={cta?.image}
+              src="/images/short_logo.png"
               alt="call to action image"
-              width={325}
-              height={206}
+              width={225}
+              height={200}
             />
           </div>
           <div className="mt-5 text-center md:mt-0 md:text-left md:col-6 lg:col-5">

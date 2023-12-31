@@ -173,6 +173,8 @@ const Home = ({ frontmatter }) => {
         </div>
       </main>
 
+      <Process />
+
       {/* Features */}
       <section className="section bg-primary">
         <div className="container">
