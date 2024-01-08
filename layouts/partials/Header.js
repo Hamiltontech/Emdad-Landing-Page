@@ -7,21 +7,10 @@ import React, { useState } from "react";
 import { GrLanguage } from "react-icons/gr";
 
 
-const Header = ({ arabic, setArabic }) => {
+const Header = () => {
   
   //router
   const router = useRouter();
-
-  const handleEnglish = (e) => {
-    e.preventDefault();
-    router.locale = "en-US"
-    setArabic(false);
-  };
-  const handleArabic = (e) => {
-    e.preventDefault();
-    setArabic(true);
-    router.locale = "ar"
-  };
 
 
   // distructuring the main menu from menu object

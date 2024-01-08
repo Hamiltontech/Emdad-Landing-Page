@@ -19,6 +19,8 @@ const RegularPages = ({ data }) => {
   const { content } = data;
   const router = useRouter();
 
+  console.log(data)
+
   return (
     <Base
       title={title}
@@ -29,12 +31,13 @@ const RegularPages = ({ data }) => {
       canonical={canonical}
     >
 
+
       {layout === "404" ? (
         <NotFound data={data} />
       ) : layout === "contact" ? (
-        <Contact data={data} />
+        <Contact data={data}/>
       ) : layout === "process" ? (
-        <Process data={data} />
+        <Process />
       ) : layout === "post" ? (
         <Post data={data} />
       ) : layout === "terms" ? (
