@@ -6,8 +6,8 @@ function Cta({ cta }) {
   return (
     <section className="section px-4 bg-primary">
       <div className="section container rounded-xl  bg-white/10 shadow-md shadow-primary">
-        <div className="row  mx-auto items-center justify-center">
-          <div className="md:col-5 lg:col-2">
+        <div className="row  mx-auto items-left justify-center">
+          {/* <div className="md:col-5 lg:col-2">
             <Image
               className="w-full"
               src="/images/short_logo.png"
@@ -15,8 +15,8 @@ function Cta({ cta }) {
               width={225}
               height={200}
             />
-          </div>
-          <div className="mt-5 text-center md:mt-0 md:text-left md:col-6 lg:col-5">
+          </div> */}
+          <div className="mt-5 text-left md:mt-0 md:text-left md:col-6 lg:col-5">
             <h2 className="text-white">{cta?.title}</h2>
             <p className="mt-6 text-white">{markdownify(cta?.content)}</p>
             {cta.button.enable && (

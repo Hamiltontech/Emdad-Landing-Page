@@ -11,15 +11,11 @@ import Privacy from "@layouts/Privacy"
 import Terms from "@layouts/Terms";
 import { useState } from "react";
 import Process from "@layouts/Process";
-import { useRouter } from "next/router";
 
 // for all regular pages
 const RegularPages = ({ data }) => {
   const { title, meta_title, description, image, noindex, canonical, layout} = data.frontmatter;
   const { content } = data;
-  const router = useRouter();
-
-  console.log(data)
 
   return (
     <Base

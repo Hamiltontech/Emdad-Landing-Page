@@ -109,8 +109,8 @@ const Header = () => {
 
             <button>
               <Link 
-              href={router.asPath}
-              locale={router.locale === "en-US" ? "ar" : "en-US"}>
+              href="https://emdad-landing-page-arabic.vercel.app/"
+              >
                 <button className="duration-150 ease-in-out hover:text-secondary">
                <GrLanguage />
                </button></Link>
