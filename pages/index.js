@@ -19,8 +19,6 @@ import Workflow from "@layouts/Workflow";
 import { useRouter } from "next/router";
 import { IoMdArrowDropdownCircle } from "react-icons/io";
 
-
-
 const Home = ({ frontmatter }) => {
   const router = useRouter();
 
@@ -183,7 +181,18 @@ const Home = ({ frontmatter }) => {
                 لماذا تختار منصة إمداد الرقمية؟
               </h2>
             ) : (
-              <h2>Why Us ?</h2>
+              <>
+                <h2>Why Us ?</h2>
+                <p className="text-white/60">
+                  "Whether you are a vendor or buyer, we craft innovative
+                  digital solutions to facilitate and sustain your business
+                  supply chain and transform all procurement and logistics
+                  processes into a digitally organized framework. Emdad Digital
+                  Platform’s full-fledged procurement management system can be
+                  easily integrated within the operations of the suppliers and
+                  businesses in a smart and seamless way. "
+                </p>
+              </>
             )}
           </div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -242,7 +251,7 @@ const Home = ({ frontmatter }) => {
 
       {/* workflow */}
       {/* <Workflow /> */}
-<Process />
+      <Process />
       {/* Cta */}
       <Cta cta={call_to_action} />
     </Base>

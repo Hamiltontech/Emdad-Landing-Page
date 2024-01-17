@@ -13,26 +13,40 @@ const Contact = ({ data }) => {
   const [email, setEmail] = useState("")
   const [subject, setSubject] = useState("")
   const [message, setMessage] = useState("")
+  const [success, setSuccess] = useState(false)
 
   async function contact_form_action(e) {
     e.preventDefault();
     let data = {
-      name,
-      email,
-      message
+      Name: name,
+      Email: email,
+      Subject: subject,
+      Message: message
     }
+   axios.post("https://strapi-155887-0.cloudclusters.net/api/contacts", {
+    data:
+    data
+   }).then((response)=>{
+    setSuccess(true)
+   }).catch((error)=>{
+    console.log(error)
+   })
    
-    axios.get("https://strapi-155887-0.cloudclusters.net/api/contacts").then((res)=>{
-      console.log(res)
-    }).catch((err)=>{
-      console.log(err)
-    })
-
   }
 
 
+
   return (
-    <section className="section bg-primary ">
+    <section className="section bg-primary">
+      {success ? 
+       <div className="container  h-screen text-white grid justify-center text-center place-items-center">
+     <div>  <h1 className="text-white">Thank you!</h1>
+       <p >Our team will get back to you shortly..</p></div>
+        </div>
+        :
+
+     
+     
       <div className="container pt-12 ">
         {markdownify(title, "h1", "text-center font-normal text-white")}
         <div className="section row pb-0">
@@ -102,6 +116,8 @@ const Contact = ({ data }) => {
           </div>
         </div>
       </div>
+         
+    }
     </section>
   );
 };
