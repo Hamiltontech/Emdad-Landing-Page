@@ -28,7 +28,7 @@ function Partners() {
               <a href="#" class="flex items-center justify-center">
                 <img
                   src={
-                    "https://strapi-155887-0.cloudclusters.net" +
+                    `https://strapi-155887-0.cloudclusters.net` +
                     item?.attributes?.Logo?.data?.attributes?.url
                   }
                   className="h-9 hover:text-white"
