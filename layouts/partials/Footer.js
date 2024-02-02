@@ -15,7 +15,7 @@ const Footer = () => {
   const { copyright, footer_content, arabic_footer_content, arabic_copyright } = config.params;
   const { footer } = menu;
   return (
-    <footer className="section pb-bg-[#111827] text-white" dir={router.locale === "ar" ? `rtl` : `ltr`}>
+    <footer className="section pb-0 bg-[#111827] text-white" dir={router.locale === "ar" ? `rtl` : `ltr`}>
       <div className="container">
         {/* footer menu */}
         <div className="row ">
