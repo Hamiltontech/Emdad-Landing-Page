@@ -14,10 +14,10 @@ const Post = () => {
     axios
       .get("https://strapi-155887-0.cloudclusters.net/api/blogs?populate=*")
       .then((res) => {
-        console.log(res)
         const array = res.data.data;
-        
+  
         const found = array?.find((post) => post?.attributes?.Slug === slug);
+
         setPostID(found?.id || "");
         setData(found);
       })
@@ -29,7 +29,6 @@ const Post = () => {
   return (
     <div title='post' layout="post">
     <PostSingle data={data} postID={postID} slug={slug}/>
-
     </div>
   )
 }
