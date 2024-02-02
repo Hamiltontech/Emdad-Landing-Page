@@ -88,7 +88,7 @@ const Home = ({ frontmatter }) => {
 
                 <a
                   href="#"
-                  class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
+                  class="bg-primary-700 mt-4 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
                 >
                   Get started
                   <svg
@@ -154,7 +154,7 @@ const Home = ({ frontmatter }) => {
             <div class="mx-auto max-w-2xl lg:max-w-none">
               <div class="space-y-4 text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                  Trusted by creators worldwide
+                All the tech in one platform
                 </h2>
                 <p class="text-lg leading-8 text-gray-300">
                   We can help you grow your audience and your business, no

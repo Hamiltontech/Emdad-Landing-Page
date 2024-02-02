@@ -83,8 +83,8 @@ workflow:
 
 # call_to_action
 call_to_action:
-  title: Ready to get started?
-  content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tristique eget amet, tempus eu at consecttur.
+  title: Unleash your growth potential!
+  content: Join us now and be a part of the best digital platform in the supply chain industry.
   image: '/images/cta.png'
   button:
     enable: true
