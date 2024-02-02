@@ -15,7 +15,7 @@ const Footer = () => {
   const { copyright, footer_content, arabic_footer_content, arabic_copyright } = config.params;
   const { footer } = menu;
   return (
-    <footer className="section pb-0 bg-primary text-white" dir={router.locale === "ar" ? `rtl` : `ltr`}>
+    <footer className="section pb-bg-[#111827] text-white" dir={router.locale === "ar" ? `rtl` : `ltr`}>
       <div className="container">
         {/* footer menu */}
         <div className="row ">
@@ -54,12 +54,9 @@ const Footer = () => {
         </div>
       </div>
         {/* copyright */}
-        <div className="  py-6 bg-[#111827]">
-          {router.locale === "ar" ? 
-           markdownify(arabic_copyright, "p", "text-sm text-center")
-          :
-          markdownify(copyright, "p", "text-sm text-center")
-          }
+        <hr className="text-white/10 mx-40"/>
+        <div className="  py-6 bg-gray-900">
+          {markdownify(copyright, "p", "text-sm text-center")}
           
         </div>
     </footer>
