@@ -57,10 +57,7 @@ const Home = ({ frontmatter }) => {
       </div>
 
       {/* Banner */}
-      <main
-        className="h-[100vh] w-full"
-        dir={router.locale === "ar" ? `rtl` : `ltr`}
-      >
+      <main className="h-[100vh] w-full">
         <video
           autoPlay
           loop
@@ -72,99 +69,47 @@ const Home = ({ frontmatter }) => {
           <div className=" m-0 h-[100vh] w-full bg-black/40 p-0">
             <div class="mx-auto grid max-w-screen-xl px-4 pt-[300px] md:pt-[300px] lg:grid-cols-12 lg:gap-8 xl:gap-0">
               <div class="mr-auto place-self-center lg:col-span-7">
-                {router.locale === "ar" ? (
-                  <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
-                    منصة امداد الرقمية
-                  </h1>
-                ) : (
-                  <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
-                    Emdad Digital Platform
-                  </h1>
-                )}
+                <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
+                  Emdad Digital Platform
+                </h1>
+
                 <p class="mb-6 max-w-2xl font-light text-gray-300 md:text-lg lg:mb-2 lg:text-xl">
-                  {router.locale === "ar" ? (
-                    <span className="font-extrabold text-white">
-                      التحول الرقمي للعمليات الشرائية واللوجستية لقطاع الأعمال
-                    </span>
-                  ) : (
-                    <>Digitally Transforming the B2B Procurement Experience!</>
-                  )}
+                  <>Digitally Transforming the B2B Procurement Experience!</>
                 </p>
                 <p>
-                  {router.locale === "ar" ? (
-                    <span className="text-white/90 lg:mb-8 ">
-                      {" "}
-                      نظام سحابي متكامل وسهل الاستخدام لإدارة العمليات الشرائية
-                      واللوجستية للمنشآت بكافة أحجامها، تسهل عملية التواصل مع
-                      الموردين، وتوفر حلولًا تقنية ذكية لكافة الخدمات الشرائية
-                      واللوجستية.
-                    </span>
-                  ) : (
-                    <span className="mb-8 text-gray-300">
-                      A turnkey cloud-based solution that enables businesses of
-                      all sizes to seamlessly manage all procurement and
-                      logistics processes in one place. We connect enterprises
-                      with suppliers to digitally transform the high-risk
-                      procurement process into a seamless business model.
-                    </span>
-                  )}
+                  <span className="mb-8 text-gray-300">
+                    A turnkey cloud-based solution that enables businesses of
+                    all sizes to seamlessly manage all procurement and logistics
+                    processes in one place. We connect enterprises with
+                    suppliers to digitally transform the high-risk procurement
+                    process into a seamless business model.
+                  </span>
                 </p>
-                {router.locale === "ar" ? (
-                  <>
-                    <a
-                      href="#"
-                      class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
-                    >
-                      <svg
-                        class="-mr-1 ml-2 h-5 w-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      ابدأ الآن
-                    </a>
 
-                    <a
-                      href="#"
-                      class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium  text-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                    >
-                      تواصل معنا
-                    </a>
-                  </>
-                ) : (
-                  <>
-                    <a
-                      href="#"
-                      class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
-                    >
-                      Get started
-                      <svg
-                        class="-mr-1 ml-2 h-5 w-5"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                    </a>
-                    <a
-                      href="#"
-                      class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium  text-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                    >
-                      Speak to Sales
-                    </a>
-                  </>
-                )}
+                <a
+                  href="#"
+                  class="bg-primary-700 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
+                >
+                  Get started
+                  <svg
+                    class="-mr-1 ml-2 h-5 w-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium  text-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                >
+                  Speak to Sales
+                </a>
               </div>
             </div>
           </div>
@@ -175,25 +120,16 @@ const Home = ({ frontmatter }) => {
       <section className="section bg-primary">
         <div className="container">
           <div className="text-center">
-            {router.locale === "ar" ? (
-              <h2 className="font-extralight">
-                {" "}
-                لماذا تختار منصة إمداد الرقمية؟
-              </h2>
-            ) : (
-              <>
-                <h2>Why Us ?</h2>
-                <p className="text-white/60">
-                  "Whether you are a vendor or buyer, we craft innovative
-                  digital solutions to facilitate and sustain your business
-                  supply chain and transform all procurement and logistics
-                  processes into a digitally organized framework. Emdad Digital
-                  Platform’s full-fledged procurement management system can be
-                  easily integrated within the operations of the suppliers and
-                  businesses in a smart and seamless way. "
-                </p>
-              </>
-            )}
+            <h2>Why Us ?</h2>
+            <p className="text-white/60">
+              "Whether you are a vendor or buyer, we craft innovative digital
+              solutions to facilitate and sustain your business supply chain and
+              transform all procurement and logistics processes into a digitally
+              organized framework. Emdad Digital Platforms full-fledged
+              procurement management system can be easily integrated within the
+              operations of the suppliers and businesses in a smart and seamless
+              way. "
+            </p>
           </div>
           <div className="mt-8 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {features?.map((item, i) => (
