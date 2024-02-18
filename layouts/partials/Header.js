@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <header className="header" dir={router.locale === "ar" ? `rtl` : `ltr`}>
-      <nav className="navbar mx-auto max-w-[1300px] px-4">
+      <nav className="navbar mx-auto max-w-[1580px] px-4">
         {/* logo */}
         <div className="order-0 -mt-4">
           {router.locale === "ar" ? (

@@ -11,9 +11,15 @@ import { useRouter } from "next/router";
 
 function About() {
   const [team, setTeam] = useState([])
+  const [visionMission, setVisionMission] = useState([])
   useEffect(()=>{
     axios.get("https://strapi-155887-0.cloudclusters.net/api/teams?populate=*").then((res)=>{
       setTeam(res.data.data)
+    }).catch((err)=>{
+      console.log(err)
+    });
+    axios.get("https://strapi-155887-0.cloudclusters.net/api/vision-missions").then((res)=>{
+      setVisionMission(res.data.data[0].attributes)
     }).catch((err)=>{
       console.log(err)
     })
@@ -53,12 +59,7 @@ function About() {
               <div className="mt-4">
                 <h4>Our Vision</h4>
                 <p className="mt-3 text-white">
-                  We aspire to be perceived as the best digital platform in the
-                  supply chain industry. Our goals include establishing the
-                  largest logistics stations for freight, offering the best
-                  transport and storage solutions, partnering with the best
-                  suppliers, and providing the best products, services, and raw
-                  materials from all around the world.
+                  {visionMission?.Vision}
                 </p>
               </div>
             </div>
@@ -66,7 +67,7 @@ function About() {
               <div className="mt-4">
                 <h4>Our Mission</h4>
                 <p className="mt-3 text-white">
-                We’re on a mission to make Emdad among the most prominent supply chain innovations within and beyond the Kingdom of Saudi Arabia. Powered by technology and market expertise, we never cease to go the extra mile and dedicate our research and development capabilities to overcome roadblocks and fulfill the market needs.
+                  {visionMission?.Mission}
                 </p>
               </div>
             </div>

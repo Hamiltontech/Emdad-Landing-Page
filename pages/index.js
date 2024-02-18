@@ -22,13 +22,15 @@ import { IoMdArrowDropdownCircle } from "react-icons/io";
 const Home = ({ frontmatter }) => {
   const router = useRouter();
 
-  const { banner, feature, services, workflow, call_to_action } = frontmatter;
+  const { feature, services, workflow, call_to_action } = frontmatter;
   const { title } = config.site;
 
   const [stats, setStats] = useState([]);
   const [features, setFeatures] = useState([]);
 
   const [arabic, setArabic] = useState(false);
+
+  const [banner, setBanner] = useState([])
 
   useEffect(() => {
     axios
@@ -43,6 +45,14 @@ const Home = ({ frontmatter }) => {
       .get("https://strapi-155887-0.cloudclusters.net/api/features")
       .then((res) => {
         setFeatures(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+      axios
+      .get("https://strapi-155887-0.cloudclusters.net/api/home-banners")
+      .then((res) => {
+        setBanner(res.data.data[0].attributes);
       })
       .catch((err) => {
         console.log(err);
@@ -65,24 +75,20 @@ const Home = ({ frontmatter }) => {
           className=" h-full w-full object-cover"
           src="/hero.mp4"
         />
-        <div className="absolute top-0 w-full">
-          <div className=" m-0 h-[100vh] w-full bg-black/40 p-0">
-            <div class="mx-auto grid max-w-screen-xl px-4 pt-[300px] md:pt-[300px] lg:grid-cols-12 lg:gap-8 xl:gap-0">
-              <div class="mr-auto place-self-center lg:col-span-7">
+        <div className="container absolute top-0 w-full lg:mx-10">
+          <div className=" m-0 h-[100vh] w-full bg-black/40 p-0 " >
+            <div class=" mx-auto grid max-w-screen-xl px-4 pt-[300px] md:pt-[300px] lg:grid-cols-12 lg:gap-8 xl:gap-0">
+              <div class=" mr-auto place-self-center lg:col-span-7">
                 <h1 class="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl xl:text-6xl">
                   Emdad Digital Platform
                 </h1>
 
                 <p class="mb-6 max-w-2xl font-light text-gray-300 md:text-lg lg:mb-2 lg:text-xl">
-                  <>Digitally Transforming the B2B Procurement Experience!</>
+                  {banner?.Slogan}
                 </p>
                 <p>
                   <span className="mb-8 text-gray-300">
-                    A turnkey cloud-based solution that enables businesses of
-                    all sizes to seamlessly manage all procurement and logistics
-                    processes in one place. We connect enterprises with
-                    suppliers to digitally transform the high-risk procurement
-                    process into a seamless business model.
+                   {banner?.Description}
                   </span>
                 </p>
 
@@ -150,7 +156,7 @@ const Home = ({ frontmatter }) => {
       {/* Stats */}
       <section className="">
         <div class="bg-[#111827] py-24 sm:py-24 ">
-          <div class="mx-auto container px-6 ">
+          <div class="mx-auto container  ">
             <div class="mx-auto max-w-2xl lg:max-w-none">
               <div class="space-y-4 text-center">
                 <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl ">

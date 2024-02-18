@@ -10,7 +10,6 @@ function Partners() {
       .get("https://strapi-155887-0.cloudclusters.net/api/partners?populate=*")
       .then((response) => {
         setPartner(response.data.data);
-        console.log(response.data.data);
       })
       .catch((error) => {
         console.log(error);
