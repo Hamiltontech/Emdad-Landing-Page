@@ -50,7 +50,7 @@ function Cta({ cta }) {
                         <div class="flex flex-wrap items-center justify-center">
                           <a href="/contact">
                             <button
-                                class="inline-flex items-center px-4 py-2 my-4 font-bold text-white bg-transparent border border-white rounded-full hover:bg-primary/90 hover:text-white ease-in-out duration-200">
+                                class="btn btn-primary inline-flex items-center  ease-in-out duration-200">
                                 <span>
                                   Know More
                                 </span>

@@ -88,7 +88,13 @@ const Home = ({ frontmatter }) => {
 
                 <a
                   href="#"
-                  class="bg-primary-700 mt-4 hover:bg-primary-800 focus:ring-primary-300 dark:focus:ring-primary-900 mr-3 inline-flex items-center justify-center rounded-lg px-5 py-3 text-center text-base font-medium text-white focus:ring-4"
+                  class="btn btn-primary inline-flex items-center justify-center text-sm"
+                >
+                  Who we are
+                </a>
+                <a
+                  href="#"
+                  class="transition ease-in-out duration-200 border-secondary mt-4 hover:border-b hover:border-secondary   mr-3 inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-white "
                 >
                   Get started
                   <svg
@@ -103,12 +109,6 @@ const Home = ({ frontmatter }) => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                </a>
-                <a
-                  href="#"
-                  class=" inline-flex items-center justify-center rounded-full border border-gray-300 px-5 py-3 text-center text-base font-medium  text-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-                >
-                  Speak to Sales
                 </a>
               </div>
             </div>
@@ -149,11 +149,11 @@ const Home = ({ frontmatter }) => {
 
       {/* Stats */}
       <section className="">
-        <div class="bg-[#111827] py-24 sm:py-24">
-          <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="bg-[#111827] py-24 sm:py-24 ">
+          <div class="mx-auto container px-6 ">
             <div class="mx-auto max-w-2xl lg:max-w-none">
               <div class="space-y-4 text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl ">
                 All the tech in one platform
                 </h2>
                 <p class="text-lg leading-8 text-gray-300">
@@ -161,10 +161,10 @@ const Home = ({ frontmatter }) => {
                   matter the size.
                 </p>
               </div>
-              <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-lg text-center sm:grid-cols-2 lg:grid-cols-7">
+              <dl class="mt-16 grid grid-cols-2 gap-0.5 overflow-hidden rounded-lg text-center sm:grid-cols-2 lg:grid-cols-7">
                 {stats.map((item) => (
                   <>
-                    <div class="flex flex-col bg-white/10 p-8">
+                    <div class="flex flex-col bg-white/10 p-8 ">
                       <dt class="text-sm font-light leading-6 text-gray-300">
                         {item?.attributes?.Title}
                       </dt>

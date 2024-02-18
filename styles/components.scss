@@ -5,7 +5,7 @@
 
 // container
 .container {
-  @apply mx-auto max-w-[1140px] px-4;
+  @apply mx-auto max-w-[1340px] px-4;
 }
 
 // form style
@@ -119,3 +119,8 @@
 }
 
 
+
+
+.p-12.shadow.bg-white\/10.text-white.rounded-xl {
+  width: -webkit-fill-available;
+}
