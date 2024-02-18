@@ -24,6 +24,11 @@
       "name": "FAQ",
       "arabic": "أسئلة متكررة",
       "url": "/faq"
+    },
+    {
+      "name": "Login",
+      "arabic": "أسئلة متكررة",
+      "url": "/register"
     }
   ],
   "footer": [
