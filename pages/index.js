@@ -92,13 +92,12 @@ const Home = ({ frontmatter }) => {
                   </span>
                 </p>
 
-                <a
+                <Link
                   href="/about"
                   class="btn btn-primary inline-flex items-center justify-center text-sm"
                 >
-                  Who we are
-                </a>
-                <a
+              Who we are</Link>
+                <Link
                   href="/contact"
                   class="transition ease-in-out duration-200 border-secondary mt-4 hover:border-b hover:border-secondary   mr-3 inline-flex items-center justify-center px-5 py-3 text-center text-base font-medium text-white "
                 >
@@ -115,7 +114,7 @@ const Home = ({ frontmatter }) => {
                       clip-rule="evenodd"
                     ></path>
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
