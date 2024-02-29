@@ -12,6 +12,7 @@ import Terms from "@layouts/Terms";
 import { useState } from "react";
 import Process from "@layouts/Process";
 import Register from "@layouts/Register";
+import Services from "@layouts/Services";
 
 // for all regular pages
 const RegularPages = ({ data }) => {
@@ -33,6 +34,8 @@ const RegularPages = ({ data }) => {
         <NotFound data={data} />
       ) : layout === "contact" ? (
         <Contact data={data}/>
+      ): layout === "services" ? (
+        <Services data={data}/>
       ): layout === "register" ? (
         <Register data={data}/>
       ) : layout === "process" ? (
