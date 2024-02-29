@@ -1,12 +1,17 @@
 import { markdownify } from "@lib/utils/textConverter";
-import { FaCircleCheck } from "react-icons/fa6";
+import { MdOutlineMiscellaneousServices } from "react-icons/md";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import {useState, useEffect} from 'react'
 
 function Services() {
-  // const { frontmatter } = data;
-  // const { title, faqs } = frontmatter;
-
+  const [service, setService] = useState([])
+useEffect(()=>{
+axios.get("https://strapi-155887-0.cloudclusters.net/api/services").then((response)=>{
+  setService(response.data.data)
+}).catch((error)=>{
+  console.log(error)
+})
+}, [])
 
 
   return (
@@ -15,18 +20,18 @@ function Services() {
       <div className="container pt-12 text-white">
         {markdownify("Emdaad Services", "h1", "text-center font-normal text-white")}
         <div className="section row -mt-6 rounded-xl">
-          {/* {faq?.map((faq, index) => ( */}
-            <div  className="col-12 mt-6 md:col-6 items-stretch flex ">
+          {service?.map((ser, index) => (
+            <div key={index} className="col-12 mt-6 md:col-6 items-stretch flex ">
               <div className="p-12 shadow bg-white/10 text-white rounded-xl">
-                <p className="ml-8 text-secondary text-sm font-extrabold">Service Tag</p>
+                {/* <p className="ml-8 text-secondary text-sm font-extrabold">{ser?.attributes?.Title}</p> */}
                 <div className=" flex gap-2 relative text-white">
-                  <FaCircleCheck  className="text-secondary " size={25}/>
-                  {markdownify("Service Title", "h4", "text-white")}
+                  <MdOutlineMiscellaneousServices  className="text-secondary " size={45}/>
+                  {markdownify(ser?.attributes?.Title, "h4", "text-white")}
                 </div>
-                {markdownify('Service Description', "p", "faq-body mt-4")}
+                {markdownify(ser?.attributes?.Description, "p", "faq-body mt-4")}
               </div>
             </div>
-          {/* ))} */}
+         ))} 
         </div>
       </div>
     </section>
